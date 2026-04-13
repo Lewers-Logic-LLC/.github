@@ -1,0 +1,17 @@
+# Ignore everything by default
+/*
+
+# Track root-level files
+!.gitignore
+!*.md
+!*.html
+
+# Track these directories
+!/memory/
+!/Company Planning/
+!/Recycler.IQ/
+/Recycler.IQ/*
+!/Recycler.IQ/Recycler.IQ Planning/
+!/logic-hub/
+/logic-hub/*
+!/logic-hub/Logic-Hub-Lewis-Planning/

@@ -1,0 +1,223 @@
+<!--
+  Lewers Logic LLC — Landing Page WordPress Content Block
+
+  USAGE: In WPAdmin, create a new Page, add a "Custom HTML" block,
+         and paste this entire file into it.
+
+  BEFORE PASTING:
+  1. Upload ALL images from src/images/ to your WordPress Media Library
+  2. Replace the YOUR_*_URL placeholders below with actual media URLs
+  3. The CSS goes in Appearance > Customize > Additional CSS
+  4. The JS goes in a "Custom HTML" block at the bottom of this page
+
+  IMAGE UPLOAD CHECKLIST:
+  - lewers-logic-llc-logomark-white-web-2x.png              → Header/footer icon (retina-ready, 160x120)
+  - lewers-logic-llc-favicon-32x32.png                      → Favicon (Site Identity)
+  - lewers-logic-llc-favicon-192x192.png                    → Favicon large (Site Identity)
+-->
+
+<div class="ll-landing">
+
+    <!-- Header / Navigation -->
+    <header class="ll-header" id="ll-top">
+        <nav class="ll-container ll-nav" aria-label="Lewers Logic LLC main navigation">
+            <a href="/" class="ll-logo-link" title="Lewers Logic LLC — Enterprise .NET Software Development">
+                <!-- REPLACE YOUR_LOGOMARK_URL with WordPress media URL for lewers-logic-llc-logomark-white-web-2x.png -->
+                <img src="YOUR_LOGOMARK_URL"
+                     alt="Lewers Logic LLC logomark"
+                     class="ll-logo-icon"
+                     width="80"
+                     height="60"
+                     loading="eager">
+                <div class="ll-logo-text">
+                    <span class="ll-logo-name">LEWERS LOGIC</span>
+                    <span class="ll-logo-tagline">Structured Logic. Engineered Solutions.</span>
+                </div>
+            </a>
+            <button class="ll-mobile-toggle" id="llMobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="ll-nav-links" id="llNavLinks">
+                <li><a href="#ll-services">Services</a></li>
+                <li><a href="#ll-products">Products</a></li>
+                <li><a href="/contact" class="ll-btn-outline-nav">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="ll-hero">
+        <div class="ll-container">
+            <p class="ll-hero-overline">Structured Logic. Engineered Solutions.</p>
+            <h1>Enterprise Software Development<br>Built to Perform</h1>
+            <p class="ll-hero-desc">Lewers Logic LLC designs and builds .NET enterprise applications, SaaS platforms, and custom integrations that solve real business problems — on time and built to last.</p>
+            <div class="ll-hero-actions">
+                <a href="/contact" class="ll-btn-primary ll-btn-lg">Get in Touch</a>
+                <a href="#ll-services" class="ll-btn-outline ll-btn-lg">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="ll-services" id="ll-services">
+        <div class="ll-container">
+            <h2 class="ll-section-title">What We Build</h2>
+            <p class="ll-section-subtitle">From greenfield SaaS products to complex system integrations, we deliver production-grade .NET solutions across the full stack.</p>
+            <div class="ll-services-grid">
+
+                <div class="ll-service-card">
+                    <div class="ll-service-icon" aria-hidden="true">&#9881;</div>
+                    <h3>Enterprise Applications</h3>
+                    <p>Custom line-of-business applications built on .NET Core with clean architecture, designed for scale, maintainability, and long-term ROI.</p>
+                </div>
+
+                <div class="ll-service-card">
+                    <div class="ll-service-icon" aria-hidden="true">&#9729;</div>
+                    <h3>SaaS Platforms</h3>
+                    <p>Multi-tenant cloud platforms on Azure — from identity and billing to tenant isolation and deployment pipelines. We build SaaS from the ground up.</p>
+                </div>
+
+                <div class="ll-service-card">
+                    <div class="ll-service-icon" aria-hidden="true">&#128279;</div>
+                    <h3>System Integrations</h3>
+                    <p>Connect your existing systems with third-party APIs, ERPs, payment processors, and in-house applications. Per-project scoping, no black boxes.</p>
+                </div>
+
+                <div class="ll-service-card">
+                    <div class="ll-service-icon" aria-hidden="true">&#128187;</div>
+                    <h3>Custom Projects</h3>
+                    <p>One-off development projects scoped to your exact requirements. Whether it's a data pipeline, internal tool, or proof of concept — we deliver.</p>
+                </div>
+
+                <div class="ll-service-card">
+                    <div class="ll-service-icon" aria-hidden="true">&#128736;</div>
+                    <h3>Blazor &amp; Web UI</h3>
+                    <p>Modern web interfaces built with Blazor, Razor Pages, and ASP.NET Core. Server-side, WASM, or hybrid — we pick the right model for your use case.</p>
+                </div>
+
+                <div class="ll-service-card">
+                    <div class="ll-service-icon" aria-hidden="true">&#9889;</div>
+                    <h3>Azure Cloud Architecture</h3>
+                    <p>Infrastructure design and deployment on Azure — App Service, Functions, Service Bus, Key Vault, SQL, and more. CI/CD pipelines included.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Bar -->
+    <section class="ll-tech-bar" aria-label="Technology stack">
+        <div class="ll-container ll-text-center">
+            <p class="ll-tech-label">Our Stack</p>
+            <div class="ll-tech-tags">
+                <span>.NET Core</span>
+                <span>C#</span>
+                <span>Blazor</span>
+                <span>Azure</span>
+                <span>SQL Server</span>
+                <span>EF Core</span>
+                <span>REST APIs</span>
+                <span>MediatR</span>
+                <span>MAUI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Spotlight -->
+    <section class="ll-products" id="ll-products">
+        <div class="ll-container">
+            <h2 class="ll-section-title">Our Products</h2>
+            <p class="ll-section-subtitle">We don't just build for clients — we build our own. Here's what we're shipping.</p>
+
+            <!-- Recycler.IQ Feature -->
+            <div class="ll-product-spotlight">
+                <div class="ll-product-info">
+                    <span class="ll-product-badge">FLAGSHIP PRODUCT</span>
+                    <h3>Recycler.IQ</h3>
+                    <p class="ll-product-tagline">Intelligent Cash Recycler Management Platform</p>
+                    <p>A centralized, hardware-agnostic SaaS platform for managing cash recycler fleets at scale. Real-time monitoring, predictive analytics, and regulatory compliance — built on .NET and Azure.</p>
+                    <ul class="ll-product-highlights">
+                        <li>Hardware-agnostic fleet management</li>
+                        <li>Real-time monitoring &amp; ML forecasting</li>
+                        <li>Multi-tenant with subdomain isolation</li>
+                        <li>Web portal + MAUI Blazor Hybrid mobile app</li>
+                    </ul>
+                    <a href="https://recycler-iq.com" class="ll-btn-primary" target="_blank" rel="noopener">Learn More</a>
+                </div>
+                <div class="ll-product-visual">
+                    <div class="ll-product-mockup" role="img" aria-label="Recycler.IQ dashboard preview showing real-time cash recycler fleet monitoring">
+                        <div class="ll-mockup-header">
+                            <span class="ll-mockup-dot"></span>
+                            <span class="ll-mockup-dot"></span>
+                            <span class="ll-mockup-dot"></span>
+                        </div>
+                        <div class="ll-mockup-body">
+                            <div class="ll-mockup-sidebar"></div>
+                            <div class="ll-mockup-content">
+                                <div class="ll-mockup-bar" style="width:85%"></div>
+                                <div class="ll-mockup-bar" style="width:60%"></div>
+                                <div class="ll-mockup-bar" style="width:72%"></div>
+                                <div class="ll-mockup-bar" style="width:45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Coming Soon -->
+            <div class="ll-coming-soon">
+                <p>More products in development. <a href="/contact">Get in touch</a> to learn what's next.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="ll-cta-bottom">
+        <div class="ll-container ll-text-center">
+            <h2>Let's Build Something That Works</h2>
+            <p>Have a project in mind? Whether it's a new SaaS product, a system integration, or a custom application — we'd like to hear about it.</p>
+            <a href="/contact" class="ll-btn-primary ll-btn-lg">Start a Conversation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="ll-footer">
+        <div class="ll-container">
+            <div class="ll-footer-grid">
+                <div class="ll-footer-brand">
+                    <a href="/" class="ll-footer-logo-link">
+                        <!-- REPLACE YOUR_LOGOMARK_URL with WordPress media URL -->
+                        <img src="YOUR_LOGOMARK_URL"
+                             alt="Lewers Logic LLC logomark"
+                             class="ll-footer-icon"
+                             width="60"
+                             height="45"
+                             loading="lazy">
+                        <span class="ll-footer-name">LEWERS LOGIC</span>
+                    </a>
+                    <p class="ll-footer-tagline">Structured Logic. Engineered Solutions.</p>
+                </div>
+                <div class="ll-footer-links">
+                    <h4>Company</h4>
+                    <a href="#ll-services">Services</a>
+                    <a href="#ll-products">Products</a>
+                    <a href="/contact">Contact</a>
+                </div>
+                <div class="ll-footer-links">
+                    <h4>Products</h4>
+                    <a href="https://recycler-iq.com" target="_blank" rel="noopener">Recycler.IQ</a>
+                </div>
+                <div class="ll-footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>981 HWY 305 N<br>Senatobia, MS 38668</p>
+                    <p><a href="mailto:info@lewerslogic.com">info@lewerslogic.com</a></p>
+                    <p><a href="mailto:sales@lewerslogic.com">sales@lewerslogic.com</a></p>
+                </div>
+            </div>
+            <div class="ll-footer-bottom">
+                <p>&copy; 2026 Lewers Logic LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- end .ll-landing -->

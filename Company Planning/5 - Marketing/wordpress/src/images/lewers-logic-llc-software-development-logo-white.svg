@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 320" width="440" height="320">
+  <!-- Lewers Logic LLC — White Logo (for dark backgrounds)
+       Ghost { L } shadow (12% larger, no box) behind main { L }, text below
+       Brackets positioned closer to central box -->
+
+  <!-- ═══ GHOST / SHADOW { L } (12% larger, subtle shadow, NO box) ═══ -->
+  <!-- Ghost left bracket { -->
+  <path d="M 137 44
+           Q 137 44, 124 44
+           Q 101 44, 101 72
+           L 101 114
+           Q 101 137, 83 150
+           Q 101 164, 101 186
+           L 101 226
+           Q 101 254, 124 254
+           Q 137 254, 137 254"
+        fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Ghost right bracket } -->
+  <path d="M 303 44
+           Q 303 44, 316 44
+           Q 339 44, 339 72
+           L 339 114
+           Q 339 137, 357 150
+           Q 339 164, 339 186
+           L 339 226
+           Q 339 254, 316 254
+           Q 303 254, 303 254"
+        fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Ghost L -->
+  <path d="M 192 108 L 192 188 L 251 188"
+        fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ═══ MAIN { L } MARK ═══ -->
+  <!-- Left bracket { -->
+  <path d="M 148 55
+           Q 148 55, 136 55
+           Q 116 55, 116 80
+           L 116 118
+           Q 116 138, 100 150
+           Q 116 162, 116 182
+           L 116 218
+           Q 116 243, 136 243
+           Q 148 243, 148 243"
+        fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right bracket } -->
+  <path d="M 292 55
+           Q 292 55, 304 55
+           Q 324 55, 324 80
+           L 324 118
+           Q 324 138, 340 150
+           Q 324 162, 324 182
+           L 324 218
+           Q 324 243, 304 243
+           Q 292 243, 292 243"
+        fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Central box frame -->
+  <rect x="168" y="88" width="104" height="124" rx="7" ry="7"
+        fill="none" stroke="#FFFFFF" stroke-width="9"/>
+  <!-- Teal L -->
+  <path d="M 195 112 L 195 184 L 248 184"
+        fill="none" stroke="#25A09C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ═══ TEXT ═══ -->
+  <text x="220" y="278" text-anchor="middle"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="22" font-weight="700" letter-spacing="3" fill="#FFFFFF">
+    LEWERS LOGIC
+  </text>
+  <text x="220" y="298" text-anchor="middle"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="13" font-weight="600" letter-spacing="5" fill="#9DD2D0">
+    LLC
+  </text>
+</svg>

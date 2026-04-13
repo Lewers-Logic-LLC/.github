@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 620 310" width="620" height="310">
+  <!-- Lewers Logic LLC — Logomark Only (Color, No Text) -->
+
+  <!-- Ghost / Shadow brackets -->
+  <path d="M 130 20 L 60 20 L 60 120 L 20 150 L 60 180 L 60 280 L 130 280" fill="none" stroke="#E6EBEE" stroke-width="36" stroke-linejoin="miter" stroke-linecap="square" />
+  <path d="M 470 20 L 540 20 L 540 120 L 580 150 L 540 180 L 540 280 L 470 280" fill="none" stroke="#E6EBEE" stroke-width="36" stroke-linejoin="miter" stroke-linecap="square" />
+  <!-- Ghost L -->
+  <path d="M 265 95 H 285 V 170 H 325 V 190 H 265 Z" fill="#DAEBEA" />
+
+  <!-- Main brackets -->
+  <path d="M 260 90 L 235 90 L 235 140 L 220 150 L 235 160 L 235 210 L 260 210" fill="none" stroke="#081634" stroke-width="12" stroke-linejoin="miter" stroke-linecap="square" />
+  <path d="M 340 90 L 365 90 L 365 140 L 380 150 L 365 160 L 365 210 L 340 210" fill="none" stroke="#081634" stroke-width="12" stroke-linejoin="miter" stroke-linecap="square" />
+  <!-- Main L -->
+  <path d="M 279 115 H 295 V 174 H 321 V 190 H 279 Z" fill="#25A09C" />
+</svg>

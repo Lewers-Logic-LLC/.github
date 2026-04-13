@@ -1,0 +1,1 @@
+This folder is for Projmanement file that have to do with the Recycler.IQ project.  Theres is not longer a need to maintain the jira break down md and docx files the source of truth is now jira. 

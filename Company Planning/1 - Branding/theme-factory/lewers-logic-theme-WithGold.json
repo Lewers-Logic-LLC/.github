@@ -1,0 +1,522 @@
+{
+  "name": "Lewers Logic",
+  "version": "1.2.0",
+  "description": "Premium brand theme for Lewers Logic LLC with teal technology accents and gold business trust signals",
+  "author": "Lewers Logic LLC",
+  "created": "2026-03-29",
+  "updated": "2026-03-29",
+
+  "colors": {
+    "primary": {
+      "dark": {
+        "name": "Deep Logic Blue",
+        "hex": "#081634",
+        "rgb": [8, 22, 52],
+        "usage": "Primary dark, headings, navigation text, body copy",
+        "contrast_white": "18.5:1",
+        "contrast_light": "15.2:1"
+      },
+      "navy": {
+        "name": "Navy Light",
+        "hex": "#0D2B49",
+        "rgb": [13, 43, 73],
+        "usage": "Secondary dark, hover states on blue",
+        "contrast_white": "14.3:1"
+      },
+      "black": {
+        "name": "Near Black",
+        "hex": "#12131A",
+        "rgb": [18, 19, 26],
+        "usage": "Deepest applications, maximum contrast",
+        "contrast_white": "20.1:1"
+      }
+    },
+    "accents": {
+      "teal": {
+        "main": {
+          "name": "Engineered Teal",
+          "hex": "#25A09C",
+          "rgb": [37, 160, 156],
+          "usage": "Primary accent — technology, product UI, interactive elements, CTAs, logo L"
+        },
+        "light": {
+          "name": "Teal Light",
+          "hex": "#9DD2D0",
+          "rgb": [157, 210, 208],
+          "usage": "Hover/highlight states, legibility on dark backgrounds"
+        },
+        "dark": {
+          "name": "Teal Dark",
+          "hex": "#318C88",
+          "rgb": [49, 140, 136],
+          "usage": "Pressed/active states, deeper emphasis"
+        }
+      },
+      "gold": {
+        "main": {
+          "name": "Premium Gold Accent",
+          "hex": "#C4962C",
+          "rgb": [196, 150, 44],
+          "usage": "Secondary accent — business, trust, premium labels, pricing, awards, corporate"
+        },
+        "light": {
+          "name": "Gold Light",
+          "hex": "#E0C97A",
+          "rgb": [224, 201, 122],
+          "usage": "Hover/highlight states, legibility on dark backgrounds"
+        },
+        "dark": {
+          "name": "Gold Dark",
+          "hex": "#A67A1E",
+          "rgb": [166, 122, 30],
+          "usage": "Pressed/active states, deeper emphasis"
+        }
+      }
+    },
+    "neutral": {
+      "light": {
+        "name": "Soft Gray",
+        "hex": "#E9F0EF",
+        "rgb": [233, 240, 240],
+        "usage": "Light backgrounds, cards, subtle containers"
+      },
+      "dark": {
+        "name": "Gray Dark",
+        "hex": "#727578",
+        "rgb": [114, 117, 120],
+        "usage": "Captions, metadata, disabled text, secondary content"
+      },
+      "white": {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": [255, 255, 255],
+        "usage": "Backgrounds, text on dark"
+      }
+    }
+  },
+
+  "fonts": {
+    "primary": {
+      "name": "Inter",
+      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "weights": [400, 500, 600, 700],
+      "usage": "Body, UI, navigation, general text"
+    },
+    "monospace": {
+      "name": "JetBrains Mono",
+      "source": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap",
+      "fallback": "'Courier New', monospace",
+      "weights": [400, 600],
+      "usage": "Code blocks, technical content, terminal output"
+    }
+  },
+
+  "slide_styles": {
+    "title": {
+      "name": "Title Slide",
+      "layout": "center",
+      "background": "#FFFFFF",
+      "text_color": "#081634",
+      "accent_color": "#25A09C",
+      "typography": {
+        "title": {
+          "font": "Inter",
+          "size": 56,
+          "weight": 700,
+          "color": "#081634",
+          "letter_spacing": -1
+        },
+        "subtitle": {
+          "font": "Inter",
+          "size": 24,
+          "weight": 400,
+          "color": "#727578"
+        }
+      },
+      "elements": {
+        "logo_color": "teal",
+        "accent_line": {
+          "type": "gradient",
+          "colors": ["#25A09C", "#9DD2D0"],
+          "position": "bottom",
+          "height": 4
+        }
+      }
+    },
+
+    "content": {
+      "name": "Content Slide",
+      "layout": "default",
+      "background": "#FFFFFF",
+      "text_color": "#081634",
+      "accent_color": "#25A09C",
+      "typography": {
+        "heading": {
+          "font": "Inter",
+          "size": 44,
+          "weight": 700,
+          "color": "#081634",
+          "margin_bottom": 24
+        },
+        "body": {
+          "font": "Inter",
+          "size": 18,
+          "weight": 400,
+          "color": "#081634",
+          "line_height": 1.6,
+          "max_width_chars": 75
+        },
+        "bullet": {
+          "font": "Inter",
+          "size": 18,
+          "weight": 400,
+          "color": "#081634",
+          "marker_color": "#25A09C",
+          "margin_left": 32
+        }
+      },
+      "elements": {
+        "header_line": {
+          "type": "solid",
+          "color": "#25A09C",
+          "height": 3,
+          "width": "100%"
+        }
+      }
+    },
+
+    "section_divider": {
+      "name": "Section Divider Slide",
+      "layout": "center",
+      "background": "#081634",
+      "text_color": "#FFFFFF",
+      "accent_color": "#C4962C",
+      "description": "Use for section breaks with premium gold accents",
+      "typography": {
+        "title": {
+          "font": "Inter",
+          "size": 52,
+          "weight": 700,
+          "color": "#FFFFFF",
+          "margin_bottom": 16
+        },
+        "subtitle": {
+          "font": "Inter",
+          "size": 20,
+          "weight": 400,
+          "color": "#E0C97A"
+        }
+      },
+      "elements": {
+        "accent_bar": {
+          "type": "gradient",
+          "colors": ["#C4962C", "#E0C97A"],
+          "position": "top",
+          "height": 6
+        },
+        "decorative_element": {
+          "type": "line",
+          "color": "#C4962C",
+          "width": 100,
+          "height": 2,
+          "position": "above_title"
+        }
+      }
+    },
+
+    "closing": {
+      "name": "Closing Slide",
+      "layout": "center",
+      "background": "#081634",
+      "text_color": "#FFFFFF",
+      "accent_color": "#25A09C",
+      "typography": {
+        "primary": {
+          "font": "Inter",
+          "size": 48,
+          "weight": 700,
+          "color": "#FFFFFF",
+          "margin_bottom": 32
+        },
+        "secondary": {
+          "font": "Inter",
+          "size": 20,
+          "weight": 400,
+          "color": "#9DD2D0",
+          "margin_bottom": 24
+        },
+        "contact": {
+          "font": "Inter",
+          "size": 16,
+          "weight": 500,
+          "color": "#E9F0EF",
+          "margin_top": 48
+        }
+      },
+      "elements": {
+        "logo_color": "white",
+        "accent_line": {
+          "type": "gradient",
+          "colors": ["#25A09C", "#9DD2D0"],
+          "position": "bottom",
+          "height": 6
+        }
+      }
+    },
+
+    "comparison": {
+      "name": "Two-Column Comparison",
+      "layout": "two-column",
+      "background": "#FFFFFF",
+      "text_color": "#081634",
+      "columns": {
+        "left": {
+          "background": "#E9F0EF",
+          "accent": "#25A09C",
+          "title_color": "#25A09C"
+        },
+        "right": {
+          "background": "#FFFFFF",
+          "accent": "#C4962C",
+          "title_color": "#C4962C"
+        }
+      },
+      "typography": {
+        "title": {
+          "font": "Inter",
+          "size": 44,
+          "weight": 700,
+          "margin_bottom": 24
+        },
+        "item": {
+          "font": "Inter",
+          "size": 16,
+          "weight": 400,
+          "line_height": 1.6
+        }
+      }
+    },
+
+    "pricing": {
+      "name": "Pricing Slide",
+      "layout": "grid",
+      "background": "#FFFFFF",
+      "accent_color": "#C4962C",
+      "cards": {
+        "standard": {
+          "background": "#FFFFFF",
+          "border_color": "#25A09C",
+          "border_width": 2
+        },
+        "featured": {
+          "background": "#C4962C",
+          "text_color": "#FFFFFF",
+          "accent": "#E0C97A"
+        }
+      },
+      "typography": {
+        "price": {
+          "font": "Inter",
+          "size": 48,
+          "weight": 700,
+          "color": "#C4962C"
+        },
+        "label": {
+          "font": "Inter",
+          "size": 14,
+          "weight": 600,
+          "text_transform": "uppercase",
+          "letter_spacing": 0.5,
+          "color": "#C4962C"
+        }
+      }
+    },
+
+    "image_with_text": {
+      "name": "Image with Text Overlay",
+      "layout": "overlay",
+      "background": "#081634",
+      "accent_color": "#25A09C",
+      "text_background": "rgba(8, 22, 52, 0.85)",
+      "typography": {
+        "heading": {
+          "font": "Inter",
+          "size": 40,
+          "weight": 700,
+          "color": "#FFFFFF"
+        },
+        "body": {
+          "font": "Inter",
+          "size": 16,
+          "weight": 400,
+          "color": "#E9F0EF"
+        }
+      }
+    }
+  },
+
+  "spacing": {
+    "system": "8px grid",
+    "values": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48,
+      "3xl": 64
+    },
+    "margin_bottom": 24,
+    "padding_default": 16,
+    "section_gap": 48
+  },
+
+  "borders": {
+    "radius": {
+      "sm": 4,
+      "md": 8,
+      "lg": 12,
+      "full": "50%"
+    },
+    "width": {
+      "thin": 1,
+      "medium": 2,
+      "thick": 3
+    }
+  },
+
+  "shadows": {
+    "elevation_1": "0 2px 4px rgba(8, 22, 52, 0.1)",
+    "elevation_2": "0 4px 8px rgba(8, 22, 52, 0.15)",
+    "elevation_3": "0 8px 16px rgba(8, 22, 52, 0.2)",
+    "elevation_4": "0 12px 24px rgba(8, 22, 52, 0.25)"
+  },
+
+  "accent_rules": {
+    "teal_usage": [
+      "Technology and product UI",
+      "Interactive elements and links",
+      "Action buttons (Submit, Save, Continue)",
+      "Form focus rings and active states",
+      "Icon accents in tech contexts",
+      "Navigation highlights",
+      "Logo 'L' accent (immutable)"
+    ],
+    "gold_usage": [
+      "Business context and corporate branding",
+      "Trust signals and certifications",
+      "Premium labels and tier indicators",
+      "Pricing highlights",
+      "Section dividers on formal documents",
+      "Award badges",
+      "Secondary/learn more buttons",
+      "Official credentials"
+    ],
+    "forbidden_combinations": [
+      "Teal text on gold background",
+      "Gold text on teal background",
+      "Both accents in same element"
+    ]
+  },
+
+  "button_styles": {
+    "primary_teal": {
+      "background": "#25A09C",
+      "text_color": "#FFFFFF",
+      "hover_background": "#318C88",
+      "font_weight": 600,
+      "padding": "8px 24px",
+      "min_height": 44,
+      "border_radius": 8,
+      "shadow": "0 2px 4px rgba(8, 22, 52, 0.1)"
+    },
+    "secondary_gold": {
+      "background": "#C4962C",
+      "text_color": "#FFFFFF",
+      "hover_background": "#A67A1E",
+      "font_weight": 600,
+      "padding": "8px 24px",
+      "min_height": 44,
+      "border_radius": 8,
+      "shadow": "0 2px 4px rgba(8, 22, 52, 0.1)"
+    },
+    "outline": {
+      "background": "transparent",
+      "border": "2px solid #25A09C",
+      "text_color": "#25A09C",
+      "hover_background": "#25A09C",
+      "hover_text_color": "#FFFFFF",
+      "border_radius": 8
+    }
+  },
+
+  "typography_scale": {
+    "h1": {
+      "size": 48,
+      "weight": 700,
+      "line_height": 1.2,
+      "letter_spacing": -0.5
+    },
+    "h2": {
+      "size": 36,
+      "weight": 700,
+      "line_height": 1.3,
+      "letter_spacing": -0.3
+    },
+    "h3": {
+      "size": 28,
+      "weight": 600,
+      "line_height": 1.35,
+      "letter_spacing": 0
+    },
+    "h4": {
+      "size": 22,
+      "weight": 600,
+      "line_height": 1.4,
+      "letter_spacing": 0
+    },
+    "body": {
+      "size": 16,
+      "weight": 400,
+      "line_height": 1.6,
+      "letter_spacing": 0
+    },
+    "small": {
+      "size": 14,
+      "weight": 400,
+      "line_height": 1.5,
+      "letter_spacing": 0
+    },
+    "caption": {
+      "size": 12,
+      "weight": 400,
+      "line_height": 1.4,
+      "letter_spacing": 0.5
+    }
+  },
+
+  "dark_mode": {
+    "enabled": true,
+    "background": "#081634",
+    "text_color": "#E9F0EF",
+    "accent_teal": "#9DD2D0",
+    "accent_gold": "#E0C97A",
+    "card_background": "#0D2B49"
+  },
+
+  "accessibility": {
+    "contrast_ratio_standard": "4.5:1",
+    "focus_ring_color": "#9DD2D0",
+    "focus_ring_width": 2,
+    "min_touch_target": 44,
+    "colorblind_safe": true
+  },
+
+  "responsive_breakpoints": {
+    "mobile": 480,
+    "tablet": 768,
+    "desktop": 1024,
+    "large": 1440
+  }
+}

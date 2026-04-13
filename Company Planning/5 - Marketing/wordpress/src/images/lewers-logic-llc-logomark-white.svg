@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" width="320" height="250">
+  <!-- Lewers Logic LLC — Logomark Only (White, No Text)
+       Ghost { L } shadow (12% larger, no box) behind main { L } -->
+
+  <!-- ═══ GHOST / SHADOW { L } (12% scale, 6% opacity) ═══ -->
+  <g opacity="0.06">
+    <path d="M 70 19
+             Q 70 19, 57 19
+             Q 35 19, 35 47
+             L 35 91
+             Q 35 114, 17 127
+             Q 35 141, 35 163
+             L 35 203
+             Q 35 231, 57 231
+             Q 70 231, 70 231"
+          fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 250 19
+             Q 250 19, 263 19
+             Q 285 19, 285 47
+             L 285 91
+             Q 285 114, 303 127
+             Q 285 141, 285 163
+             L 285 203
+             Q 285 231, 263 231
+             Q 250 231, 250 231"
+          fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 138 84 L 138 162 L 188 162"
+          fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ═══ MAIN { L } MARK ═══ -->
+  <!-- Left curly bracket { -->
+  <path d="M 80 30
+           Q 80 30, 68 30
+           Q 48 30, 48 55
+           L 48 95
+           Q 48 115, 32 127
+           Q 48 139, 48 159
+           L 48 195
+           Q 48 220, 68 220
+           Q 80 220, 80 220"
+        fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right curly bracket } -->
+  <path d="M 240 30
+           Q 240 30, 252 30
+           Q 272 30, 272 55
+           L 272 95
+           Q 272 115, 288 127
+           Q 272 139, 272 159
+           L 272 195
+           Q 272 220, 252 220
+           Q 240 220, 240 220"
+        fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Box around the L -->
+  <rect x="115" y="65" width="90" height="120" rx="7" ry="7"
+        fill="none" stroke="#FFFFFF" stroke-width="9"/>
+  <!-- Teal L -->
+  <path d="M 140 88 L 140 158 L 185 158"
+        fill="none" stroke="#25A09C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

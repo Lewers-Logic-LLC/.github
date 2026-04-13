@@ -1,0 +1,927 @@
+/*
+   Lewers Logic LLC - WordPress Theme CSS
+   Version: 2.0
+   Last Updated: March 2026
+
+   This file provides comprehensive WordPress styling with the Lewers Logic
+   brand colors, typography, and design system.
+
+   Installation: Add this as "Additional CSS" in WordPress Customizer
+*/
+
+/* ============================================================================
+   IMPORTS
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ============================================================================
+   ROOT VARIABLES (Custom Properties)
+   ============================================================================ */
+
+:root {
+  /* Primary Colors */
+  --ll-blue-dark: #081634;
+  --ll-blue-navy: #0D2B49;
+  --ll-blue-black: #12131A;
+
+  /* Accent Colors */
+  --ll-teal-main: #25A09C;
+  --ll-teal-light: #9DD2D0;
+  --ll-teal-dark: #318C88;
+
+  --ll-gold-main: #C4962C;
+  --ll-gold-light: #E0C97A;
+  --ll-gold-dark: #A67A1E;
+
+  /* Neutral Colors */
+  --ll-gray-light: #E9F0EF;
+  --ll-gray-dark: #727578;
+  --ll-white: #FFFFFF;
+
+  /* Typography */
+  --ll-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ll-font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Spacing Scale (8px system) */
+  --ll-space-xs: 4px;
+  --ll-space-sm: 8px;
+  --ll-space-md: 16px;
+  --ll-space-lg: 24px;
+  --ll-space-xl: 32px;
+  --ll-space-2xl: 48px;
+  --ll-space-3xl: 64px;
+
+  /* Border Radius */
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-radius-lg: 12px;
+  --ll-radius-full: 50%;
+
+  /* Shadows */
+  --ll-shadow-1: 0 2px 4px rgba(8, 22, 52, 0.1);
+  --ll-shadow-2: 0 4px 8px rgba(8, 22, 52, 0.15);
+  --ll-shadow-3: 0 8px 16px rgba(8, 22, 52, 0.2);
+  --ll-shadow-4: 0 12px 24px rgba(8, 22, 52, 0.25);
+  --ll-shadow-inset: inset 0 1px 2px rgba(8, 22, 52, 0.1);
+}
+
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ll-font-primary);
+  color: var(--ll-blue-dark);
+  background-color: var(--ll-white);
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ll-font-primary);
+  color: var(--ll-blue-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: var(--ll-space-lg);
+  margin-bottom: var(--ll-space-md);
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 48px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 1.35;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Paragraph */
+p {
+  margin-bottom: var(--ll-space-md);
+  max-width: 75ch;
+  line-height: 1.6;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Strong & Em */
+strong, b {
+  font-weight: 600;
+  color: var(--ll-blue-dark);
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* ============================================================================
+   LINKS
+   ============================================================================ */
+
+a {
+  color: var(--ll-teal-main);
+  text-decoration: underline;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--ll-teal-dark);
+  text-decoration-color: var(--ll-teal-dark);
+}
+
+a:active,
+a:visited {
+  color: var(--ll-teal-dark);
+}
+
+a:focus {
+  outline: 2px solid var(--ll-teal-main);
+  outline-offset: 2px;
+  border-radius: var(--ll-radius-sm);
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button,
+.wp-block-button__link {
+  font-family: var(--ll-font-primary);
+  font-size: 16px;
+  font-weight: 600;
+  padding: var(--ll-space-sm) var(--ll-space-md);
+  border: none;
+  border-radius: var(--ll-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 1.5;
+  text-align: center;
+  outline: none;
+}
+
+/* Primary Button (Teal) - Action buttons */
+button,
+input[type="submit"],
+input[type="button"],
+.button,
+.wp-block-button__link,
+.btn-primary {
+  background-color: var(--ll-teal-main);
+  color: var(--ll-white);
+  box-shadow: var(--ll-shadow-1);
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.button:hover,
+.wp-block-button__link:hover,
+.btn-primary:hover {
+  background-color: var(--ll-teal-dark);
+  box-shadow: var(--ll-shadow-2);
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.button:active,
+.wp-block-button__link:active,
+.btn-primary:active {
+  background-color: var(--ll-teal-dark);
+  box-shadow: var(--ll-shadow-inset);
+  transform: translateY(1px);
+}
+
+button:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+.button:focus,
+.wp-block-button__link:focus,
+.btn-primary:focus {
+  outline: 2px solid var(--ll-teal-light);
+  outline-offset: 2px;
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled,
+.button:disabled,
+.wp-block-button__link:disabled,
+.btn-primary:disabled {
+  background-color: var(--ll-gray-dark);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Secondary Button (Gold) - Learn more, premium actions */
+.button-secondary,
+.wp-block-button.is-style-outline .wp-block-button__link,
+.btn-secondary {
+  background-color: var(--ll-gold-main);
+  color: var(--ll-white);
+  box-shadow: var(--ll-shadow-1);
+}
+
+.button-secondary:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.btn-secondary:hover {
+  background-color: var(--ll-gold-dark);
+  box-shadow: var(--ll-shadow-2);
+}
+
+.button-secondary:active,
+.wp-block-button.is-style-outline .wp-block-button__link:active,
+.btn-secondary:active {
+  background-color: var(--ll-gold-dark);
+  box-shadow: var(--ll-shadow-inset);
+  transform: translateY(1px);
+}
+
+.button-secondary:focus,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.btn-secondary:focus {
+  outline: 2px solid var(--ll-gold-light);
+  outline-offset: 2px;
+}
+
+/* Outline Button */
+.button-outline,
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  color: var(--ll-teal-main);
+  border: 2px solid var(--ll-teal-main);
+  padding: calc(var(--ll-space-sm) - 2px) calc(var(--ll-space-md) - 2px);
+}
+
+.button-outline:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background-color: var(--ll-teal-main);
+  color: var(--ll-white);
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: var(--ll-space-sm) var(--ll-space-md);
+  border: 1px solid #ccc;
+  border-radius: var(--ll-radius-md);
+  font-family: var(--ll-font-primary);
+  font-size: 16px;
+  background-color: var(--ll-white);
+  color: var(--ll-blue-dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  margin-bottom: var(--ll-space-md);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--ll-teal-main);
+  box-shadow: 0 0 0 3px rgba(37, 160, 156, 0.1);
+  background-color: var(--ll-white);
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: var(--ll-space-sm);
+  font-weight: 500;
+  color: var(--ll-blue-dark);
+  font-size: 14px;
+}
+
+/* Required indicator */
+label .required,
+label span.required {
+  color: var(--ll-teal-main);
+  margin-left: 2px;
+}
+
+/* Checkbox & Radio */
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+  margin-right: var(--ll-space-sm);
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline;
+  margin-left: var(--ll-space-sm);
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Placeholder */
+::placeholder {
+  color: var(--ll-gray-dark);
+  opacity: 1;
+}
+
+/* ============================================================================
+   LISTS
+   ============================================================================ */
+
+ul, ol {
+  margin-bottom: var(--ll-space-md);
+  margin-left: var(--ll-space-lg);
+}
+
+li {
+  margin-bottom: var(--ll-space-sm);
+  line-height: 1.6;
+}
+
+ul li::marker {
+  color: var(--ll-teal-main);
+}
+
+ol li::marker {
+  color: var(--ll-teal-main);
+}
+
+dl {
+  margin-bottom: var(--ll-space-md);
+}
+
+dt {
+  font-weight: 600;
+  color: var(--ll-blue-dark);
+  margin-top: var(--ll-space-md);
+}
+
+dd {
+  margin-left: var(--ll-space-lg);
+  margin-bottom: var(--ll-space-md);
+}
+
+/* ============================================================================
+   CODE & PRE
+   ============================================================================ */
+
+code {
+  font-family: var(--ll-font-mono);
+  font-size: 14px;
+  background-color: var(--ll-gray-light);
+  color: var(--ll-blue-dark);
+  padding: 2px 6px;
+  border-radius: var(--ll-radius-sm);
+  white-space: normal;
+}
+
+pre {
+  background-color: var(--ll-blue-dark);
+  color: var(--ll-gray-light);
+  padding: var(--ll-space-md);
+  border-radius: var(--ll-radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--ll-space-md);
+  line-height: 1.6;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ============================================================================
+   HEADER & NAVIGATION
+   ============================================================================ */
+
+header,
+.site-header {
+  background-color: var(--ll-white);
+  border-bottom: 1px solid #e0e0e0;
+  padding: var(--ll-space-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--ll-shadow-1);
+}
+
+.site-title {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ll-blue-dark);
+}
+
+.site-title a {
+  color: var(--ll-blue-dark);
+  text-decoration: none;
+}
+
+.site-title a:hover {
+  color: var(--ll-teal-main);
+}
+
+/* Navigation */
+nav,
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+
+nav ul,
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: var(--ll-space-lg);
+}
+
+nav a,
+.main-navigation a {
+  color: var(--ll-blue-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: var(--ll-space-sm) 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+.main-navigation a:hover,
+nav li.current-menu-item > a,
+.main-navigation li.current-menu-item > a {
+  color: var(--ll-teal-main);
+  border-bottom-color: var(--ll-teal-main);
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+  nav ul,
+  .main-navigation ul {
+    flex-direction: column;
+    gap: var(--ll-space-md);
+  }
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+footer,
+.site-footer {
+  background-color: var(--ll-blue-dark);
+  color: var(--ll-gray-light);
+  padding: var(--ll-space-2xl) 0 var(--ll-space-lg);
+  margin-top: var(--ll-space-3xl);
+  border-top: 1px solid var(--ll-blue-navy);
+}
+
+footer a,
+.site-footer a {
+  color: var(--ll-teal-light);
+  text-decoration: underline;
+}
+
+footer a:hover,
+.site-footer a:hover {
+  color: var(--ll-gray-light);
+}
+
+footer p,
+.site-footer p {
+  margin-bottom: var(--ll-space-md);
+  font-size: 14px;
+  max-width: 100%;
+}
+
+footer h3,
+.site-footer h3 {
+  color: var(--ll-gray-light);
+  font-size: 16px;
+  margin-bottom: var(--ll-space-md);
+}
+
+/* ============================================================================
+   CARDS & CONTAINERS
+   ============================================================================ */
+
+.card,
+.wp-block-card,
+article {
+  background-color: var(--ll-white);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--ll-radius-md);
+  padding: var(--ll-space-lg);
+  margin-bottom: var(--ll-space-lg);
+  box-shadow: var(--ll-shadow-1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.wp-block-card:hover,
+article:hover {
+  box-shadow: var(--ll-shadow-2);
+  transform: translateY(-2px);
+}
+
+.card-header,
+.card-title {
+  margin-bottom: var(--ll-space-md);
+}
+
+.card-body {
+  margin-bottom: var(--ll-space-md);
+}
+
+.card-footer {
+  margin-top: var(--ll-space-md);
+  padding-top: var(--ll-space-md);
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: var(--ll-gray-dark);
+}
+
+/* Section divider (Gold accent) */
+.section-divider,
+hr {
+  height: 2px;
+  background: linear-gradient(to right, var(--ll-gold-main), var(--ll-gold-light));
+  border: none;
+  margin: var(--ll-space-2xl) 0;
+  opacity: 0.6;
+}
+
+/* ============================================================================
+   BLOCK EDITOR UTILITIES
+   ============================================================================ */
+
+/* Highlight block */
+.has-background {
+  padding: var(--ll-space-md) var(--ll-space-lg);
+  border-radius: var(--ll-radius-md);
+}
+
+.has-ll-blue-dark-background-color {
+  background-color: var(--ll-blue-dark);
+  color: var(--ll-white);
+}
+
+.has-ll-teal-background-color {
+  background-color: var(--ll-teal-main);
+  color: var(--ll-white);
+}
+
+.has-ll-teal-light-background-color {
+  background-color: var(--ll-teal-light);
+  color: var(--ll-blue-dark);
+}
+
+.has-ll-gold-background-color {
+  background-color: var(--ll-gold-main);
+  color: var(--ll-white);
+}
+
+.has-ll-gold-light-background-color {
+  background-color: var(--ll-gold-light);
+  color: var(--ll-blue-dark);
+}
+
+.has-ll-gray-light-background-color {
+  background-color: var(--ll-gray-light);
+  color: var(--ll-blue-dark);
+}
+
+/* Text colors */
+.has-ll-blue-dark-color {
+  color: var(--ll-blue-dark);
+}
+
+.has-ll-teal-color {
+  color: var(--ll-teal-main);
+}
+
+.has-ll-gold-color {
+  color: var(--ll-gold-main);
+}
+
+.has-ll-gray-dark-color {
+  color: var(--ll-gray-dark);
+}
+
+/* ============================================================================
+   BLOCKQUOTE
+   ============================================================================ */
+
+blockquote {
+  border-left: 4px solid var(--ll-teal-main);
+  padding-left: var(--ll-space-lg);
+  margin: var(--ll-space-lg) 0;
+  font-style: italic;
+  color: var(--ll-gray-dark);
+  background-color: var(--ll-gray-light);
+  padding: var(--ll-space-md) var(--ll-space-lg);
+  border-radius: var(--ll-radius-md);
+}
+
+blockquote p {
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--ll-space-md);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ll-blue-dark);
+  font-size: 14px;
+}
+
+/* ============================================================================
+   TABLES
+   ============================================================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--ll-space-lg);
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: var(--ll-space-md);
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: var(--ll-gray-light);
+  font-weight: 600;
+  color: var(--ll-blue-dark);
+}
+
+tbody tr:hover {
+  background-color: var(--ll-gray-light);
+}
+
+thead {
+  background-color: var(--ll-blue-dark);
+  color: var(--ll-white);
+}
+
+thead th {
+  background-color: var(--ll-blue-dark);
+  color: var(--ll-white);
+  font-weight: 600;
+}
+
+/* ============================================================================
+   IMAGES
+   ============================================================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--ll-radius-md);
+}
+
+figure {
+  margin: var(--ll-space-lg) 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 12px;
+  color: var(--ll-gray-dark);
+  margin-top: var(--ll-space-sm);
+  font-style: italic;
+}
+
+/* ============================================================================
+   ALERT & NOTICE BOXES
+   ============================================================================ */
+
+.alert,
+.notice,
+.wp-notice {
+  padding: var(--ll-space-lg);
+  border-radius: var(--ll-radius-md);
+  margin-bottom: var(--ll-space-lg);
+  border-left: 4px solid;
+}
+
+.alert-info,
+.notice-info {
+  background-color: rgba(37, 160, 156, 0.1);
+  border-left-color: var(--ll-teal-main);
+  color: var(--ll-blue-dark);
+}
+
+.alert-success {
+  background-color: rgba(37, 160, 156, 0.1);
+  border-left-color: var(--ll-teal-main);
+  color: var(--ll-blue-dark);
+}
+
+.alert-warning {
+  background-color: rgba(196, 150, 44, 0.1);
+  border-left-color: var(--ll-gold-main);
+  color: var(--ll-blue-dark);
+}
+
+.alert-error,
+.notice-error {
+  background-color: rgba(255, 0, 0, 0.05);
+  border-left-color: #cc0000;
+  color: var(--ll-blue-dark);
+}
+
+/* ============================================================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--ll-space-sm); }
+.mt-md { margin-top: var(--ll-space-md); }
+.mt-lg { margin-top: var(--ll-space-lg); }
+.mt-xl { margin-top: var(--ll-space-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--ll-space-sm); }
+.mb-md { margin-bottom: var(--ll-space-md); }
+.mb-lg { margin-bottom: var(--ll-space-lg); }
+.mb-xl { margin-bottom: var(--ll-space-xl); }
+
+.p-0 { padding: 0; }
+.p-sm { padding: var(--ll-space-sm); }
+.p-md { padding: var(--ll-space-md); }
+.p-lg { padding: var(--ll-space-lg); }
+.p-xl { padding: var(--ll-space-xl); }
+
+.bg-light { background-color: var(--ll-gray-light); }
+.bg-dark { background-color: var(--ll-blue-dark); }
+.bg-white { background-color: var(--ll-white); }
+
+.text-muted { color: var(--ll-gray-dark); }
+.text-primary { color: var(--ll-blue-dark); }
+.text-teal { color: var(--ll-teal-main); }
+.text-gold { color: var(--ll-gold-main); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  body {
+    background: var(--ll-white);
+    color: var(--ll-blue-dark);
+  }
+
+  header, footer, nav, .no-print {
+    display: none;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

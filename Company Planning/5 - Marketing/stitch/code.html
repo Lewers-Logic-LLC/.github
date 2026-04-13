@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#005e63",
+                        "error-container": "#9f0519",
+                        "primary": "#7fece7",
+                        "surface-container-low": "#021133",
+                        "primary-container": "#3db1ac",
+                        "tertiary-dim": "#1da7f0",
+                        "on-primary-fixed": "#004140",
+                        "primary-dim": "#70ddd9",
+                        "surface-bright": "#142a59",
+                        "on-secondary": "#005459",
+                        "on-primary-fixed-variant": "#00615e",
+                        "on-surface": "#dee5ff",
+                        "surface-container-highest": "#0f244f",
+                        "on-background": "#dee5ff",
+                        "secondary-fixed": "#17eefa",
+                        "tertiary-container": "#38b4ff",
+                        "on-primary-container": "#002827",
+                        "tertiary-fixed": "#4fb9ff",
+                        "surface-dim": "#000c2b",
+                        "surface-tint": "#7fece7",
+                        "surface-container-lowest": "#000000",
+                        "secondary": "#17eefa",
+                        "primary-fixed-dim": "#70ddd9",
+                        "secondary-fixed-dim": "#00deeb",
+                        "error-dim": "#d7383b",
+                        "tertiary-fixed-dim": "#29acf6",
+                        "on-surface-variant": "#9eaad0",
+                        "on-secondary-fixed": "#003f43",
+                        "surface-variant": "#0f244f",
+                        "on-tertiary": "#003a59",
+                        "primary-fixed": "#7fece7",
+                        "inverse-on-surface": "#485475",
+                        "inverse-primary": "#006b68",
+                        "surface-container-high": "#0a1e45",
+                        "background": "#000c2b",
+                        "tertiary": "#6ac1ff",
+                        "on-error": "#490006",
+                        "secondary-dim": "#00deeb",
+                        "on-secondary-container": "#e2fdff",
+                        "outline": "#687598",
+                        "surface-container": "#05183c",
+                        "on-tertiary-fixed-variant": "#003d5d",
+                        "surface": "#000c2b",
+                        "inverse-surface": "#faf8ff",
+                        "secondary-container": "#00696f",
+                        "error": "#ff716c",
+                        "on-tertiary-container": "#002f49",
+                        "on-primary": "#005654",
+                        "on-error-container": "#ffa8a3",
+                        "on-tertiary-fixed": "#001a2b",
+                        "outline-variant": "#3b4768"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["JetBrains Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(15, 36, 79, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .kinetic-glow {
+            box-shadow: 0 0 15px rgba(61, 177, 172, 0.15);
+        }
+        .terminal-gradient {
+            background: linear-gradient(180deg, rgba(0, 12, 43, 1) 0%, rgba(5, 24, 60, 1) 100%);
+        }
+        body {
+            background-color: #000c2b;
+            color: #dee5ff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-[#000c2b] dark:bg-[#000c2b] shadow-[0_0_15px_rgba(61,177,172,0.1)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-xl font-bold tracking-tighter text-[#dee5ff] uppercase font-['Space_Grotesk']">
+                Lewers Logic LLC
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#7fece7] border-b-2 border-[#7fece7] pb-1 font-medium transition-colors duration-300" href="#">Services</a>
+<a class="text-[#dee5ff]/70 font-medium hover:text-[#7fece7] transition-colors duration-300" href="#">Recycler.IQ</a>
+<a class="text-[#dee5ff]/70 font-medium hover:text-[#7fece7] transition-colors duration-300" href="#">Tech Stack</a>
+<a class="text-[#dee5ff]/70 font-medium hover:text-[#7fece7] transition-colors duration-300" href="#">About</a>
+<a class="text-[#dee5ff]/70 font-medium hover:text-[#7fece7] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 font-label text-sm font-bold uppercase tracking-widest active:scale-95 transition-transform kinetic-glow">
+                Get Started
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section: Kinetic Terminal -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-background via-surface-container-low to-surface opacity-90"></div>
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="Abstract cyber security background with digital circuitry patterns and deep blue data streams illuminated by teal light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtSpFqFuKahf2ZxT92JUj3t65sKVSQmHw-_cbrSDTQ6Fu7FZNB5aowXPtuy0DWqvcCJPOspRSE1qAEJLWog3yL5S8SRW_guQPqFXsV-KYy_0agNUZ5osBsFZyZCsYJxzxkX0VIXVmsBI7asQOA1I2Gm76hyzJSqtDqKkAqcixCOrWoQ4aqtk0td_GnzdgmokS_QyJYOH_JkQmspqsKAFun2Ek0DhsdHsPMtkTndde-y_MCMUK0cZNx-g3mkyMUew1EEnhOMLngHDSX"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-8">
+<div class="inline-flex items-center gap-3 mb-6">
+<span class="w-3 h-3 bg-secondary kinetic-glow animate-pulse"></span>
+<span class="font-label text-secondary text-xs uppercase tracking-[0.3em]">Engineering the Monolith</span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl font-bold leading-none tracking-tighter mb-8 text-on-surface">
+                        Precision <br/> <span class="text-primary">Software</span> <br/> Systems.
+                    </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
+                        Lewers Logic LLC provides enterprise-grade .NET development and architectural consulting. We build systems that don't just work—they endure.
+                    </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-primary text-on-primary px-8 py-4 font-label text-sm font-bold uppercase tracking-widest kinetic-glow flex items-center gap-2">
+                            Consult with Us <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-transparent border border-outline-variant/30 text-on-surface px-8 py-4 font-label text-sm font-bold uppercase tracking-widest hover:bg-surface-variant transition-colors">
+                            View Portfolio
+                        </button>
+</div>
+</div>
+<div class="md:col-span-4 hidden md:block">
+<div class="glass-panel p-6 border-l border-primary/20">
+<div class="font-label text-[10px] text-primary/60 mb-4 uppercase tracking-widest">Architectural Foundations</div>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-outline-variant/15 pb-2">
+<span class="font-label text-xs text-on-surface-variant">STACK</span>
+<span class="font-label text-xs text-secondary">.NET CORE</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/15 pb-2">
+<span class="font-label text-xs text-on-surface-variant">CLOUD</span>
+<span class="font-label text-xs text-secondary">AZURE</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/15 pb-2">
+<span class="font-label text-xs text-on-surface-variant">INFRA</span>
+<span class="font-label text-xs text-secondary">KUBERNETES</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Services Grid -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-20">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-4 uppercase">Services</h2>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4">
+<!-- Large Feature -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-high p-10 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[240px]" data-icon="architecture">architecture</span>
+</div>
+<div>
+<span class="material-symbols-outlined text-primary mb-6" data-icon="architecture" data-weight="fill">architecture</span>
+<h3 class="font-headline text-3xl font-bold mb-4">Enterprise Architecture</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">System-wide blueprints designed for scalability, security, and long-term maintainability in complex environments.</p>
+</div>
+<a class="font-label text-primary text-xs uppercase tracking-widest flex items-center gap-2" href="#">
+                            Explore Services <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Medium Feature -->
+<div class="md:col-span-2 bg-surface-container p-8 flex gap-6 items-start">
+<div class="bg-surface-container-highest p-4">
+<span class="material-symbols-outlined text-secondary" data-icon="terminal">terminal</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">Backend Development</h3>
+<p class="text-on-surface-variant text-sm">High-performance .NET APIs and microservices built with a focus on reliability and technical debt reduction.</p>
+</div>
+</div>
+<!-- Small Features -->
+<div class="bg-surface-container-highest p-8">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="cloud_sync">cloud_sync</span>
+<h3 class="font-headline text-lg font-bold mb-2">Cloud Modernization</h3>
+<p class="text-on-surface-variant text-xs">Migrating legacy monolithic applications to resilient, cloud-native Azure environments.</p>
+</div>
+<div class="bg-surface-container-low p-8 border-t border-primary/10">
+<span class="material-symbols-outlined text-error mb-4" data-icon="verified">verified</span>
+<h3 class="font-headline text-lg font-bold mb-2">Quality Assurance</h3>
+<p class="text-on-surface-variant text-xs">Ensuring that every line of code adds measurable value.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Highlight Section: Obsidian Glass -->
+<section class="py-32 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative aspect-square">
+<div class="absolute inset-4 bg-primary/5 blur-[100px] rounded-full"></div>
+<div class="relative h-full w-full bg-surface-container-high rounded-lg overflow-hidden border border-outline-variant/15 glass-panel p-2">
+<img class="w-full h-full object-cover opacity-60" data-alt="High contrast close-up of high-end server hardware with glowing blue and green status indicators in a dark datacenter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEo3hfliheg5v8VFjVKGrDocoGggGK-otrLoZI8ZmPgaK7w3eP4nt95QRdO-diGUQPUm2o-_KoYe_BHHaxK21XZt6kR5ddL8NV2ccX992amkPR2PRat_207t7j66Xy321HiBxJnXdj_P4C9Qcyo8z76F2Pqqv7g9uLNMOQnlBx9Oq0vf5Hk5DZKifOqufCVxpTPi9fbsueD1Z88SqqP2IhO7I-r-yCXdfWncwVtJLcrryeS-5FeESEcXwzSKH_k_e3In4dcLVa4UYW"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-background/80 backdrop-blur-md p-8 border border-primary/20 kinetic-glow max-w-xs">
+<div class="font-label text-[10px] text-secondary mb-2">FEATURED PRODUCT</div>
+<div class="font-label text-xs text-on-surface leading-tight">
+                                    &gt; RECYCLER.IQ<br/>
+                                    &gt; INITIALIZING ANALYSIS... [DONE]<br/>
+                                    &gt; SCANNING HEAP... [DONE]<br/>
+                                    &gt; STATUS: OPTIMIZED
+                                </div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="font-label text-primary text-xs tracking-[0.5em] uppercase block mb-4">Featured Product</div>
+<h2 class="font-headline text-5xl font-bold mb-8 leading-tight">Recycler.IQ</h2>
+<p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
+                        The definitive garbage collection monitoring and management tool for high-performance .NET applications. Gain granular visibility into your memory pressure before it impacts production performance.
+                    </p>
+<ul class="space-y-6 mb-12">
+<li class="flex items-center gap-4">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label text-sm uppercase tracking-wider">Real-time Heap Analysis</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label text-sm uppercase tracking-wider">Predictive Memory Leak Detection</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label text-sm uppercase tracking-wider">Automated Diagnostic Profiling</span>
+</li>
+</ul>
+<button class="bg-secondary text-on-secondary px-8 py-4 font-label text-sm font-bold uppercase tracking-widest active:scale-95 transition-transform">
+                        Request Early Access
+                    </button>
+</div>
+</div>
+</section>
+<!-- Technical Philosophy -->
+<section class="py-32 bg-surface">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<span class="font-label text-primary text-xs tracking-[0.5em] uppercase block mb-6">About the Firm</span>
+<h2 class="font-headline text-5xl font-bold mb-12 tracking-tight">Ready to fortify your architecture?</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+                    Lewers Logic LLC was founded on the principle that modern software should be as durable as structural engineering. We specialize in the "Unfashionable Excellence"—the critical backend systems that power global enterprises.
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 border-t border-outline-variant/15 pt-20">
+<div class="space-y-4">
+<h4 class="font-headline text-4xl font-bold text-primary">15+</h4>
+<p class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Years Exp.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-4xl font-bold text-primary">250M+</h4>
+<p class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Lines Managed</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section (Replacing original philosophy points with CTA wording) -->
+<section class="py-32 bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<p class="text-surface-variant text-xl mb-12">
+                    Schedule a technical audit or discuss your upcoming .NET project with our principal engineers.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-4 max-w-2xl mx-auto">
+<input class="bg-white/5 border border-white/20 text-white px-6 py-4 rounded-md w-full focus:outline-none focus:border-secondary font-label text-sm" placeholder="Enter your business email" type="email"/>
+<button class="bg-secondary text-on-secondary px-10 py-4 font-label text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform whitespace-nowrap">
+                        Contact Us
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#3b4768]/15 bg-[#000000] dark:bg-[#000000]">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-black text-[#dee5ff] font-headline mb-2">Lewers Logic LLC</div>
+<p class="font-['JetBrains_Mono'] text-[10px] text-[#dee5ff]/40 uppercase tracking-widest">
+                    Engineering the Monolith.
+                </p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-4">
+<div class="flex gap-8 font-['JetBrains_Mono'] text-xs uppercase tracking-widest">
+<a class="text-[#dee5ff]/50 hover:text-[#17eefa] transition-opacity" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/50 hover:text-[#17eefa] transition-opacity" href="#">Terms of Service</a>
+<a class="text-[#dee5ff]/50 hover:text-[#17eefa] transition-opacity" href="#">Documentation</a>
+<a class="text-[#dee5ff]/50 hover:text-[#17eefa] transition-opacity" href="#">Contact Us</a>
+</div>
+<div class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest text-[#dee5ff]/30 mt-4 md:mt-0">
+                    © 2024 Lewers Logic LLC. Engineering the Monolith.
+                </div>
+</div>
+</div>
+</footer>
+<!-- Status Beacon Component -->
+<div class="fixed bottom-8 right-8 flex items-center gap-3 glass-panel px-4 py-2 border border-primary/20 z-50">
+<div class="w-2 h-2 bg-secondary kinetic-glow animate-pulse"></div>
+<span class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">Live System Uplink</span>
+</div>
+</body></html>

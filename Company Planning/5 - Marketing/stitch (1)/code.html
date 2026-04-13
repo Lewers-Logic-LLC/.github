@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lewers Logic LLC | Engineering the Monolith</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#515e7f",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "background": "#faf8ff",
+                    "surface-container-high": "#e2e7ff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#00201f",
+                    "on-tertiary-fixed": "#0d1c2f",
+                    "secondary-fixed-dim": "#6ad8d3",
+                    "inverse-primary": "#b9c6ed",
+                    "tertiary-fixed": "#d5e3fd",
+                    "on-background": "#131b2e",
+                    "tertiary": "#000000",
+                    "surface-variant": "#dae2fd",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f2f3ff",
+                    "on-tertiary-fixed-variant": "#3a485c",
+                    "on-primary-fixed-variant": "#3a4666",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006a67",
+                    "on-secondary-fixed-variant": "#00504d",
+                    "primary-fixed-dim": "#b9c6ed",
+                    "on-surface": "#131b2e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#b9c7e0",
+                    "inverse-surface": "#283044",
+                    "on-surface-variant": "#45464e",
+                    "tertiary-container": "#0d1c2f",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eaedff",
+                    "on-primary-container": "#7783a7",
+                    "primary-container": "#0d1a38",
+                    "surface-dim": "#d2d9f4",
+                    "secondary-fixed": "#88f4ef",
+                    "surface": "#faf8ff",
+                    "on-primary-fixed": "#0d1a38",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-secondary-container": "#006f6c",
+                    "primary": "#000000",
+                    "outline": "#75777e",
+                    "surface-container-highest": "#dae2fd",
+                    "outline-variant": "#c6c6ce",
+                    "primary-fixed": "#dae2ff",
+                    "on-tertiary-container": "#76859b",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#faf8ff",
+                    "secondary-container": "#85f1ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monolith-gradient {
+            background: linear-gradient(135deg, #0d1a38 0%, #050a18 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto bg-white/80 dark:bg-[#0d1a38]/80 backdrop-blur-md z-50 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold tracking-tighter text-[#0d1a38] dark:text-white font-['Space_Grotesk']">Lewers Logic LLC</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#006a67] border-b-2 border-[#006a67] pb-1" href="#">Services</a>
+<a class="text-[#131b2e] dark:text-[#dae2fd] hover:text-[#006a67] transition-colors" href="#">Recycler.IQ</a>
+<a class="text-[#131b2e] dark:text-[#dae2fd] hover:text-[#006a67] transition-colors" href="#">Tech Stack</a>
+<a class="text-[#131b2e] dark:text-[#dae2fd] hover:text-[#006a67] transition-colors" href="#">About</a>
+<a class="text-[#131b2e] dark:text-[#dae2fd] hover:text-[#006a67] transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">
+            Get Started
+        </button>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center px-8 md:px-16 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 monolith-gradient opacity-95"></div>
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="abstract technical grid lines on a dark navy background representing software architecture and deep engineering structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwVdN8l5Ns32OavGTY6YXhx1Y-d-91a45B-PXMbf8ZowIfUuif4LCZe-RRFjHaGJhRvHgAtC5kIUbiBd0rv0PEYh7tv_me-CuMVCQR7CReh0q35Ux63e0BIztWgOoLffeNnE6Z-BukWclFG9LA62oQ1MDhG3Uy7g0n0II28piZZOhaqx_zfg132HKSjKo9WdtdveK06OQ21p6LKlay7LOSMrqPJKHKadVq4lw9wcWjne4QKQ5mqUImKmVz5Ys96IQlnkr6YAJd8hMN"/>
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-sm mb-8">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-secondary text-xs font-label uppercase tracking-widest font-semibold">Engineering the Monolith</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none mb-8">
+                    Precision <span class="text-secondary-fixed">Software</span> Systems.
+                </h1>
+<p class="text-xl text-surface-variant max-w-2xl font-light leading-relaxed mb-10">
+                    Lewers Logic LLC provides enterprise-grade .NET development and architectural consulting. We build systems that don't just work—they endure.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-md font-semibold text-lg flex items-center gap-2 hover:opacity-90 transition-all">
+                        Consult with Us <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/5 border border-white/20 backdrop-blur-md text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-white/10 transition-all">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+</section>
+<!-- Tech Stack Bar -->
+<section class="bg-surface-container-low py-8 border-y border-outline-variant/10">
+<div class="container mx-auto px-8">
+<p class="text-center text-on-surface-variant font-label text-xs uppercase tracking-widest mb-6 opacity-60">Architectural Foundations</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 font-headline font-bold text-xl">.NET CORE</div>
+<div class="flex items-center gap-2 font-headline font-bold text-xl">AZURE</div>
+<div class="flex items-center gap-2 font-headline font-bold text-xl">SQL SERVER</div>
+<div class="flex items-center gap-2 font-headline font-bold text-xl">DOCKER</div>
+<div class="flex items-center gap-2 font-headline font-bold text-xl">KUBERNETES</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 bg-surface px-8 md:px-16">
+<div class="mb-16">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight text-primary-container mb-4">Services</h2>
+<div class="h-1.5 w-24 bg-secondary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1px bg-outline-variant/20 rounded-xl overflow-hidden shadow-2xl">
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block group-hover:scale-110 transition-transform" data-icon="architecture">architecture</span>
+<h3 class="text-2xl font-bold mb-4 text-primary-container">Enterprise Architecture</h3>
+<p class="text-on-surface-variant leading-relaxed">System-wide blueprints designed for scalability, security, and long-term maintainability in complex environments.</p>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block group-hover:scale-110 transition-transform" data-icon="terminal">terminal</span>
+<h3 class="text-2xl font-bold mb-4 text-primary-container">Backend Development</h3>
+<p class="text-on-surface-variant leading-relaxed">High-performance .NET APIs and microservices built with a focus on reliability and technical debt reduction.</p>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block group-hover:scale-110 transition-transform" data-icon="cloud_sync">cloud_sync</span>
+<h3 class="text-2xl font-bold mb-4 text-primary-container">Cloud Modernization</h3>
+<p class="text-on-surface-variant leading-relaxed">Migrating legacy monolithic applications to resilient, cloud-native Azure environments with minimal downtime.</p>
+</div>
+</div>
+</section>
+<!-- Product Spotlight: Recycler.IQ -->
+<section class="py-24 bg-primary-container text-white overflow-hidden">
+<div class="container mx-auto px-8 md:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="bg-secondary-container/20 text-secondary-fixed text-xs font-bold px-3 py-1 inline-block mb-6 rounded-sm uppercase tracking-widest">Featured Product</div>
+<h2 class="text-5xl md:text-6xl font-bold tracking-tight mb-8">Recycler.IQ</h2>
+<p class="text-xl text-surface-variant leading-relaxed mb-8">
+                            The definitive garbage collection monitoring and management tool for high-performance .NET applications. Gain granular visibility into your memory pressure before it impacts production performance.
+                        </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span class="text-lg">Real-time Heap Analysis</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span class="text-lg">Predictive Memory Leak Detection</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span class="text-lg">Automated Diagnostic Profiling</span>
+</li>
+</ul>
+<button class="bg-secondary text-white px-10 py-4 rounded-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+                            Request Early Access
+                        </button>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-secondary/20 blur-3xl rounded-full"></div>
+<div class="relative bg-[#131b2e] border border-white/10 p-4 rounded-xl shadow-2xl">
+<div class="flex gap-2 mb-4 px-2">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+<div class="w-3 h-3 rounded-full bg-white/10"></div>
+</div>
+<img class="rounded-lg w-full aspect-video object-cover shadow-inner" data-alt="sophisticated data dashboard showing memory allocation charts and garbage collection cycles with a sleek dark theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEo3hfliheg5v8VFjVKGrDocoGggGK-otrLoZI8ZmPgaK7w3eP4nt95QRdO-diGUQPUm2o-_KoYe_BHHaxK21XZt6kR5ddL8NV2ccX992amkPR2PRat_207t7j66Xy321HiBxJnXdj_P4C9Qcyo8z76F2Pqqv7g9uLNMOQnlBx9Oq0vf5Hk5DZKifOqufCVxpTPi9fbsueD1Z88SqqP2IhO7I-r-yCXdfWncwVtJLcrryeS-5FeESEcXwzSKH_k_e3In4dcLVa4UYW"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Credibility / About -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<img class="rounded-xl shadow-xl grayscale contrast-125" data-alt="minimalist architectural building interior with strong vertical lines and clean light representing stability and logic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfh_0HRUvribsOYVobOrBmFZh0OAHNL8jq0TgsrDhHZPR8290YrXIz_YBEezScFm2VnmUDQEoS9XqKOntPrZ3wGglekJdrlxoLceCrZoFgixNbhu4IgSzfqquqH92rrJf6qoIFLQTI0uMCXG7QpASZBKLC-5YFGzwqCR1zg36e12qy2iqebjbOvxABo0evAykLwn61Pm6-zxxJj7Q9S5uf_oGz3s7WMMEuETuxjuZZw4m4hpoVswHmhFvjVC0ak6DU4NxVSLi87Ptf"/>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="text-4xl font-bold mb-8 text-primary-container">About the Firm</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                        Lewers Logic LLC was founded on the principle that modern software should be as durable as structural engineering. We specialize in the "Unfashionable Excellence"—the critical backend systems that power global enterprises.
+                    </p>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Our methodology combines deep technical expertise with a pragmatic approach to business requirements, ensuring that every line of code adds measurable value to the bottom line.
+                    </p>
+<div class="mt-10 grid grid-cols-2 gap-8 border-t border-outline-variant pt-10">
+<div>
+<div class="text-4xl font-bold text-secondary mb-2">15+</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Years Exp.</div>
+</div>
+<div>
+<div class="text-4xl font-bold text-secondary mb-2">250M+</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Lines Managed</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-6xl mx-auto monolith-gradient rounded-3xl p-12 md:p-24 relative overflow-hidden text-center">
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">Ready to fortify your architecture?</h2>
+<p class="text-surface-variant text-xl max-w-2xl mx-auto mb-12">
+                        Schedule a technical audit or discuss your upcoming .NET project with our principal engineers.
+                    </p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<input class="bg-white/10 border border-white/20 text-white px-6 py-4 rounded-md w-full md:w-96 focus:outline-none focus:border-secondary" placeholder="Enter your business email" type="email"/>
+<button class="bg-secondary text-white px-10 py-4 rounded-md font-bold hover:scale-105 transition-transform">
+                            Contact Us
+                        </button>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0d1a38] dark:bg-[#081634] w-full py-12 flex flex-col md:flex-row justify-between items-center px-12 border-t border-white/5">
+<div class="flex flex-col gap-4 mb-8 md:mb-0">
+<span class="text-lg font-bold text-white font-['Space_Grotesk']">Lewers Logic LLC</span>
+<p class="text-slate-400 text-sm max-w-xs font-['Inter'] uppercase tracking-widest">© 2024 Lewers Logic LLC. Engineering the Monolith.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm uppercase tracking-widest">
+<a class="text-slate-400 hover:text-[#88f4ef] transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-[#88f4ef] transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-[#88f4ef] transition-colors" href="#">Documentation</a>
+<a class="text-slate-400 hover:text-[#88f4ef] transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

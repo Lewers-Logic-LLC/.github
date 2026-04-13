@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lewers Logic — Font Sampler v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Crimson+Text:wght@400;600;700&family=Barlow+Condensed:wght@300;400;600;700&family=Archivo+Black&family=Libre+Bodoni:wght@400;600;700&family=Vollkorn:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Spectral:wght@300;400;600;700&family=Oswald:wght@300;400;500;600;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-blue: #081634;
+    --teal: #25A09C;
+    --soft-gray: #E9F0EF;
+    --teal-light: #9DD2D0;
+    --teal-dark: #318C88;
+    --navy-light: #0D2B49;
+    --near-black: #12131A;
+    --gray-dark: #727578;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--near-black);
+    color: var(--white);
+    font-family: system-ui, sans-serif;
+    padding: 48px 24px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header h1 {
+    font-size: 22px;
+    color: var(--teal-light);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+  .header p {
+    color: var(--gray-dark);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .font-section {
+    max-width: 900px;
+    margin: 0 auto 64px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+
+  /* Light top half */
+  .section-light {
+    background: var(--white);
+    padding: 48px;
+  }
+
+  /* Dark bottom half */
+  .section-dark {
+    background: var(--deep-blue);
+    padding: 36px 48px;
+  }
+
+  .font-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .font-label .name {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--teal);
+    font-family: system-ui;
+  }
+  .font-label .vibe {
+    font-size: 12px;
+    color: var(--gray-dark);
+    font-family: system-ui;
+    font-style: italic;
+  }
+
+  .hero-text {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--deep-blue);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .sub-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-light);
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+  .body-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--deep-blue);
+    line-height: 1.75;
+    margin-bottom: 16px;
+    max-width: 640px;
+  }
+  .ui-text {
+    font-size: 13px;
+    color: var(--gray-dark);
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+  }
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cta-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--teal);
+    text-decoration: none;
+  }
+  .cta-secondary {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    background: transparent;
+    border: 2px solid var(--teal-light);
+    text-decoration: none;
+  }
+
+  .dark-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .dark-body {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--teal-light);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .char-display {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+    line-height: 1.8;
+    word-break: break-all;
+  }
+
+  .section-number {
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--soft-gray);
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    font-family: system-ui;
+    line-height: 1;
+    opacity: 0.5;
+  }
+  .section-light { position: relative; overflow: hidden; }
+
+  @media (max-width: 600px) {
+    .section-light, .section-dark { padding: 28px; }
+    .hero-text { font-size: 32px; }
+    .section-number { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Font Sampler — v3</h1>
+  <p>12 fonts that actually look different from each other. Serifs with character, condensed, wide, monospace, high-contrast — each one has a distinct personality.</p>
+</div>
+
+<!-- 1. Playfair Display -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Playfair Display', serif;">
+    <div class="section-number">01</div>
+    <div class="font-label">
+      <span class="name">Playfair Display</span>
+      <span class="vibe">High-contrast editorial serif — think magazine covers</span>
+    </div>
+    <div class="hero-text" style="font-weight: 900;">Lewers Logic LLC</div>
+    <div class="sub-text">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Playfair Display', serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Playfair Display', serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Playfair Display', serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 2. Bebas Neue -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Bebas Neue', sans-serif;">
+    <div class="section-number">02</div>
+    <div class="font-label">
+      <span class="name">Bebas Neue</span>
+      <span class="vibe">All-caps condensed display — bold, loud, industrial</span>
+    </div>
+    <div class="hero-text" style="font-size: 56px; letter-spacing: 3px;">LEWERS LOGIC LLC</div>
+    <div class="sub-text" style="font-size: 24px; letter-spacing: 2px;">INTELLIGENT, STRUCTURED SOLUTIONS</div>
+    <div class="body-text" style="font-size: 18px; letter-spacing: 0.5px;">BUILD SMARTER SOFTWARE WITH ENGINEERING PRECISION. OUR PLATFORM DELIVERS ENTERPRISE-GRADE TOOLS DESIGNED FOR TEAMS THAT VALUE RELIABILITY AND CLARITY.</div>
+    <div class="ui-text" style="letter-spacing: 2px;">DASHBOARD · ANALYTICS · SETTINGS · API DOCS · V2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;">GET STARTED</span>
+      <span class="cta-secondary" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;">LEARN MORE</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Bebas Neue', sans-serif;">
+    <div class="dark-heading" style="letter-spacing: 2px;">RECYCLER.IQ PLATFORM</div>
+    <div class="dark-body" style="letter-spacing: 1px;">REAL-TIME CONTAINER TRACKING AND PREDICTIVE ANALYTICS FOR MODERN RECYCLING OPERATIONS.</div>
+    <div class="char-display">AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ 0123456789</div>
+  </div>
+</div>
+
+<!-- 3. JetBrains Mono -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'JetBrains Mono', monospace;">
+    <div class="section-number">03</div>
+    <div class="font-label">
+      <span class="name">JetBrains Mono</span>
+      <span class="vibe">Monospace as brand font — pure developer/engineering DNA</span>
+    </div>
+    <div class="hero-text" style="font-size: 40px;">Lewers Logic LLC</div>
+    <div class="sub-text" style="font-size: 18px;">Intelligent, Structured Solutions</div>
+    <div class="body-text" style="font-size: 15px; line-height: 1.8;">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'JetBrains Mono', monospace; font-size: 13px;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'JetBrains Mono', monospace; font-size: 13px;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'JetBrains Mono', monospace;">
+    <div class="dark-heading" style="font-size: 22px;">Recycler.IQ Platform</div>
+    <div class="dark-body" style="font-size: 14px;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 4. Barlow Condensed -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Barlow Condensed', sans-serif;">
+    <div class="section-number">04</div>
+    <div class="font-label">
+      <span class="name">Barlow Condensed</span>
+      <span class="vibe">Tall, narrow, modern — space-efficient with strong presence</span>
+    </div>
+    <div class="hero-text" style="font-size: 56px; font-weight: 700;">Lewers Logic LLC</div>
+    <div class="sub-text" style="font-weight: 600;">Intelligent, Structured Solutions</div>
+    <div class="body-text" style="font-weight: 400; font-size: 17px;">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text" style="font-weight: 300;">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Barlow Condensed', sans-serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 5. Archivo Black -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Archivo Black', sans-serif;">
+    <div class="section-number">05</div>
+    <div class="font-label">
+      <span class="name">Archivo Black</span>
+      <span class="vibe">Ultra-bold grotesque — heavy, commanding, modern</span>
+    </div>
+    <div class="hero-text" style="font-size: 44px;">Lewers Logic LLC</div>
+    <div class="sub-text" style="font-size: 20px;">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Archivo Black', sans-serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Archivo Black', sans-serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Archivo Black', sans-serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 6. Libre Bodoni -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Libre Bodoni', serif;">
+    <div class="section-number">06</div>
+    <div class="font-label">
+      <span class="name">Libre Bodoni</span>
+      <span class="vibe">Didone serif — extreme thin/thick contrast, luxury tech</span>
+    </div>
+    <div class="hero-text">Lewers Logic LLC</div>
+    <div class="sub-text">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Libre Bodoni', serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Libre Bodoni', serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Libre Bodoni', serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 7. Vollkorn -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Vollkorn', serif;">
+    <div class="section-number">07</div>
+    <div class="font-label">
+      <span class="name">Vollkorn</span>
+      <span class="vibe">Warm, sturdy book serif — wholesome, trustworthy, dense</span>
+    </div>
+    <div class="hero-text" style="font-weight: 900;">Lewers Logic LLC</div>
+    <div class="sub-text">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Vollkorn', serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Vollkorn', serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Vollkorn', serif;">
+    <div class="dark-heading" style="font-weight: 900;">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 8. IBM Plex Sans -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'IBM Plex Sans', sans-serif;">
+    <div class="section-number">08</div>
+    <div class="font-label">
+      <span class="name">IBM Plex Sans</span>
+      <span class="vibe">Corporate engineering — IBM's own typeface, precise &amp; technical</span>
+    </div>
+    <div class="hero-text">Lewers Logic LLC</div>
+    <div class="sub-text" style="font-weight: 500;">Intelligent, Structured Solutions</div>
+    <div class="body-text" style="font-weight: 300;">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text" style="font-weight: 300;">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'IBM Plex Sans', sans-serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'IBM Plex Sans', sans-serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'IBM Plex Sans', sans-serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body" style="font-weight: 300;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 9. Spectral -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Spectral', serif;">
+    <div class="section-number">09</div>
+    <div class="font-label">
+      <span class="name">Spectral</span>
+      <span class="vibe">Sharp, modern serif — designed for screens, crisp at any size</span>
+    </div>
+    <div class="hero-text">Lewers Logic LLC</div>
+    <div class="sub-text">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text" style="font-weight: 300;">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Spectral', serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Spectral', serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Spectral', serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 10. Oswald -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Oswald', sans-serif;">
+    <div class="section-number">10</div>
+    <div class="font-label">
+      <span class="name">Oswald</span>
+      <span class="vibe">Semi-condensed workhorse — strong, vertical, newspaper headline energy</span>
+    </div>
+    <div class="hero-text" style="font-weight: 700;">Lewers Logic LLC</div>
+    <div class="sub-text" style="font-weight: 500;">Intelligent, Structured Solutions</div>
+    <div class="body-text" style="font-weight: 300; font-size: 17px;">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text" style="font-weight: 300;">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Oswald', sans-serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Oswald', sans-serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Oswald', sans-serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body" style="font-weight: 300;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 11. Crimson Text -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Crimson Text', serif;">
+    <div class="section-number">11</div>
+    <div class="font-label">
+      <span class="name">Crimson Text</span>
+      <span class="vibe">Old-style Garamond cousin — elegant, readable, scholarly</span>
+    </div>
+    <div class="hero-text">Lewers Logic LLC</div>
+    <div class="sub-text">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Crimson Text', serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Crimson Text', serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Crimson Text', serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+<!-- 12. Cardo -->
+<div class="font-section">
+  <div class="section-light" style="font-family: 'Cardo', serif;">
+    <div class="section-number">12</div>
+    <div class="font-label">
+      <span class="name">Cardo</span>
+      <span class="vibe">Scholarly serif — Bembo-style, timeless, built for long reading</span>
+    </div>
+    <div class="hero-text">Lewers Logic LLC</div>
+    <div class="sub-text">Intelligent, Structured Solutions</div>
+    <div class="body-text">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+    <div class="ui-text">Dashboard · Analytics · Settings · API Docs · v2.4.1</div>
+    <div class="cta-row">
+      <span class="cta-primary" style="font-family: 'Cardo', serif;">Get Started</span>
+      <span class="cta-secondary" style="font-family: 'Cardo', serif;">Learn More</span>
+    </div>
+  </div>
+  <div class="section-dark" style="font-family: 'Cardo', serif;">
+    <div class="dark-heading">Recycler.IQ Platform</div>
+    <div class="dark-body">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+    <div class="char-display">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</div>
+  </div>
+</div>
+
+</body>
+</html>

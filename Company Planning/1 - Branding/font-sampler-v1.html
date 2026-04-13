@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lewers Logic — Font Sampler v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=DM+Sans:wght@400;600;700&family=Manrope:wght@400;600;700&family=Sora:wght@400;600;700&family=Urbanist:wght@400;600;700&family=Lexend:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&family=Albert+Sans:wght@400;600;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-blue: #081634;
+    --teal: #25A09C;
+    --soft-gray: #E9F0EF;
+    --teal-light: #9DD2D0;
+    --navy-light: #0D2B49;
+    --near-black: #12131A;
+    --gray-dark: #727578;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--soft-gray);
+    color: var(--deep-blue);
+    font-family: system-ui, sans-serif;
+    padding: 40px 24px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header h1 {
+    font-size: 28px;
+    color: var(--deep-blue);
+    margin-bottom: 8px;
+  }
+  .header p {
+    color: var(--gray-dark);
+    font-size: 15px;
+  }
+
+  .category {
+    margin-bottom: 48px;
+  }
+  .category-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--teal);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--teal-light);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(8,22,52,0.08);
+    transition: box-shadow 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(8,22,52,0.12);
+  }
+
+  .font-name {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-dark);
+    margin-bottom: 16px;
+    font-family: system-ui;
+  }
+
+  .sample-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--deep-blue);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .sample-subheading {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy-light);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .sample-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--deep-blue);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .sample-small {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray-dark);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .sample-cta {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--teal);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  .dark-preview {
+    background: var(--deep-blue);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+  .dark-preview .dp-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .dark-preview .dp-body {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--teal-light);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Font Sampler — v1</h1>
+  <p>Geometric sans-serifs — clean, modern, tech-forward</p>
+</div>
+
+<!-- MODERN & GEOMETRIC -->
+<div class="category">
+  <div class="category-label">Modern &amp; Geometric</div>
+  <div class="grid">
+
+    <div class="card" style="font-family: 'Outfit', sans-serif;">
+      <div class="font-name">Outfit</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Outfit', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Outfit', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Outfit', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+      <div class="font-name">Plus Jakarta Sans</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Plus Jakarta Sans', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Plus Jakarta Sans', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Plus Jakarta Sans', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'Figtree', sans-serif;">
+      <div class="font-name">Figtree</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Figtree', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Figtree', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Figtree', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TECHNICAL & SHARP -->
+<div class="category">
+  <div class="category-label">Technical &amp; Sharp</div>
+  <div class="grid">
+
+    <div class="card" style="font-family: 'Space Grotesk', sans-serif;">
+      <div class="font-name">Space Grotesk</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Space Grotesk', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Space Grotesk', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Space Grotesk', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'DM Sans', sans-serif;">
+      <div class="font-name">DM Sans</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'DM Sans', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'DM Sans', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'DM Sans', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'Manrope', sans-serif;">
+      <div class="font-name">Manrope</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Manrope', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Manrope', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Manrope', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PREMIUM & REFINED -->
+<div class="category">
+  <div class="category-label">Premium &amp; Refined</div>
+  <div class="grid">
+
+    <div class="card" style="font-family: 'Sora', sans-serif;">
+      <div class="font-name">Sora</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Sora', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Sora', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Sora', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'Urbanist', sans-serif;">
+      <div class="font-name">Urbanist</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Urbanist', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Urbanist', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Urbanist', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'Albert Sans', sans-serif;">
+      <div class="font-name">Albert Sans</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Albert Sans', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Albert Sans', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Albert Sans', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BOLD & DISTINCTIVE -->
+<div class="category">
+  <div class="category-label">Bold &amp; Distinctive</div>
+  <div class="grid">
+
+    <div class="card" style="font-family: 'Lexend', sans-serif;">
+      <div class="font-name">Lexend</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Lexend', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Lexend', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Lexend', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+    <div class="card" style="font-family: 'Nunito Sans', sans-serif;">
+      <div class="font-name">Nunito Sans</div>
+      <div class="sample-heading">Lewers Logic LLC</div>
+      <div class="sample-subheading">Intelligent, Structured Solutions</div>
+      <div class="sample-body">Build smarter software with engineering precision. Our platform delivers enterprise-grade tools designed for teams that value reliability and clarity.</div>
+      <div class="sample-small">Dashboard · Analytics · Settings · API Documentation · v2.4.1</div>
+      <span class="sample-cta" style="font-family: 'Nunito Sans', sans-serif;">Get Started</span>
+      <div class="dark-preview">
+        <div class="dp-heading" style="font-family: 'Nunito Sans', sans-serif;">Recycler.IQ Platform</div>
+        <div class="dp-body" style="font-family: 'Nunito Sans', sans-serif;">Real-time container tracking and predictive analytics for modern recycling operations.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

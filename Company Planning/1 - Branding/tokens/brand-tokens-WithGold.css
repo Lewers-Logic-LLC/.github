@@ -1,0 +1,272 @@
+/* ============================================================
+   LEWERS LOGIC LLC - BRAND TOKEN VARIABLES
+   Version 1.2.0
+   CSS Custom Properties with --ll- prefix
+   ============================================================ */
+
+:root {
+  /* === COLORS - BASE === */
+  --ll-deep-logic-blue: #081634;
+  --ll-engineered-teal: #25A09C;
+  --ll-premium-gold: #C4962C;
+  --ll-soft-gray: #E9F0EF;
+  --ll-teal-light: #9DD2D0;
+  --ll-teal-dark: #318C88;
+  --ll-gold-light: #E0C97A;
+  --ll-gold-dark: #A67A1E;
+  --ll-navy-light: #0D2B49;
+  --ll-near-black: #12131A;
+  --ll-gray-dark: #727578;
+  --ll-white: #FFFFFF;
+
+  /* === SEMANTIC COLOR ALIASES === */
+  --ll-color-primary: var(--ll-deep-logic-blue);
+  --ll-color-primary-dark: var(--ll-deep-logic-blue);
+  --ll-color-secondary: var(--ll-navy-light);
+  --ll-color-accent-tech: var(--ll-engineered-teal);
+  --ll-color-accent-business: var(--ll-premium-gold);
+  --ll-color-background-light: var(--ll-soft-gray);
+  --ll-color-text-primary: var(--ll-near-black);
+  --ll-color-text-secondary: var(--ll-gray-dark);
+  --ll-color-text-inverse: var(--ll-white);
+  --ll-color-border: var(--ll-gray-dark);
+  --ll-color-surface: var(--ll-white);
+
+  /* === INTERACTIVE STATE COLORS === */
+  --ll-color-hover-teal: var(--ll-teal-light);
+  --ll-color-active-teal: var(--ll-teal-dark);
+  --ll-color-hover-gold: var(--ll-gold-light);
+  --ll-color-active-gold: var(--ll-gold-dark);
+
+  /* === TYPOGRAPHY - FONT FAMILIES === */
+  --ll-font-primary: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --ll-font-monospace: 'JetBrains Mono', 'Courier New', monospace;
+  --ll-font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* === TYPOGRAPHY - FONT SIZES === */
+  --ll-font-size-body: 12px;
+  --ll-font-size-body-lg: 14px;
+  --ll-font-size-h4: 16px;
+  --ll-font-size-h3: 20px;
+  --ll-font-size-h2: 24px;
+  --ll-font-size-h1: 32px;
+  --ll-font-size-display: 40px;
+
+  /* === TYPOGRAPHY - SCALES === */
+  --ll-font-size-xs: 10px;
+  --ll-font-size-sm: 12px;
+  --ll-font-size-base: 12px;
+  --ll-font-size-md: 14px;
+  --ll-font-size-lg: 16px;
+  --ll-font-size-xl: 20px;
+  --ll-font-size-2xl: 24px;
+  --ll-font-size-3xl: 32px;
+  --ll-font-size-4xl: 40px;
+
+  /* === SPACING SCALE === */
+  --ll-spacing-xs: 4px;
+  --ll-spacing-sm: 8px;
+  --ll-spacing-md: 12px;
+  --ll-spacing-base: 16px;
+  --ll-spacing-lg: 24px;
+  --ll-spacing-xl: 32px;
+  --ll-spacing-2xl: 48px;
+  --ll-spacing-3xl: 64px;
+  --ll-spacing-4xl: 96px;
+
+  /* Alternative naming */
+  --ll-space-4: 4px;
+  --ll-space-8: 8px;
+  --ll-space-12: 12px;
+  --ll-space-16: 16px;
+  --ll-space-24: 24px;
+  --ll-space-32: 32px;
+  --ll-space-48: 48px;
+  --ll-space-64: 64px;
+  --ll-space-96: 96px;
+
+  /* === BORDER RADIUS === */
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-radius-lg: 12px;
+  --ll-radius-xl: 16px;
+  --ll-radius-full: 9999px;
+
+  /* === SHADOWS === */
+  --ll-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ll-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ll-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* === TRANSITIONS === */
+  --ll-transition-fast: 150ms ease-in-out;
+  --ll-transition-base: 250ms ease-in-out;
+  --ll-transition-slow: 350ms ease-in-out;
+
+  /* === Z-INDEX SCALE === */
+  --ll-z-dropdown: 1000;
+  --ll-z-modal: 1050;
+  --ll-z-popover: 1060;
+  --ll-z-tooltip: 1070;
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* === COLORS - DARK MODE === */
+    --ll-color-primary: #1a2f5a;
+    --ll-color-secondary: #0D2B49;
+    --ll-color-accent-tech: #2fbab0;
+    --ll-color-accent-business: #d9a85a;
+    --ll-color-background-light: #1a1f2e;
+    --ll-color-text-primary: #e8f0f7;
+    --ll-color-text-secondary: #9fa4aa;
+    --ll-color-text-inverse: #12131A;
+    --ll-color-border: #3a4048;
+    --ll-color-surface: #1a1f2e;
+
+    /* === DARK MODE INTERACTIVE STATES === */
+    --ll-color-hover-teal: #4ec7be;
+    --ll-color-active-teal: #238a82;
+    --ll-color-hover-gold: #e8c893;
+    --ll-color-active-gold: #8f5e0f;
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES (OPTIONAL)
+   ============================================================ */
+
+/* Text color utilities */
+.text-primary {
+  color: var(--ll-color-text-primary);
+}
+
+.text-secondary {
+  color: var(--ll-color-text-secondary);
+}
+
+.text-accent-tech {
+  color: var(--ll-color-accent-tech);
+}
+
+.text-accent-business {
+  color: var(--ll-color-accent-business);
+}
+
+/* Background color utilities */
+.bg-primary {
+  background-color: var(--ll-color-primary);
+}
+
+.bg-surface {
+  background-color: var(--ll-color-surface);
+}
+
+.bg-light {
+  background-color: var(--ll-color-background-light);
+}
+
+/* Shadow utilities */
+.shadow-sm {
+  box-shadow: var(--ll-shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--ll-shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--ll-shadow-lg);
+}
+
+/* Border radius utilities */
+.rounded-sm {
+  border-radius: var(--ll-radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--ll-radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--ll-radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--ll-radius-xl);
+}
+
+.rounded-full {
+  border-radius: var(--ll-radius-full);
+}
+
+/* Spacing utilities */
+.gap-xs {
+  gap: var(--ll-spacing-xs);
+}
+
+.gap-sm {
+  gap: var(--ll-spacing-sm);
+}
+
+.gap-md {
+  gap: var(--ll-spacing-md);
+}
+
+.gap-base {
+  gap: var(--ll-spacing-base);
+}
+
+.gap-lg {
+  gap: var(--ll-spacing-lg);
+}
+
+.gap-xl {
+  gap: var(--ll-spacing-xl);
+}
+
+/* Typography utilities */
+.font-primary {
+  font-family: var(--ll-font-primary);
+}
+
+.font-mono {
+  font-family: var(--ll-font-monospace);
+}
+
+.text-h1 {
+  font-size: var(--ll-font-size-h1);
+  font-family: var(--ll-font-primary);
+}
+
+.text-h2 {
+  font-size: var(--ll-font-size-h2);
+  font-family: var(--ll-font-primary);
+}
+
+.text-h3 {
+  font-size: var(--ll-font-size-h3);
+  font-family: var(--ll-font-primary);
+}
+
+.text-h4 {
+  font-size: var(--ll-font-size-h4);
+  font-family: var(--ll-font-primary);
+}
+
+.text-body {
+  font-size: var(--ll-font-size-body);
+  font-family: var(--ll-font-primary);
+}
+
+.text-body-lg {
+  font-size: var(--ll-font-size-body-lg);
+  font-family: var(--ll-font-primary);
+}
+
+.text-display {
+  font-size: var(--ll-font-size-display);
+  font-family: var(--ll-font-primary);
+}

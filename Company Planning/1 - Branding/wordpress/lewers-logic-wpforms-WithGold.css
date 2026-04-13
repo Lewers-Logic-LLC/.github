@@ -1,0 +1,646 @@
+/*
+   Lewers Logic LLC - WPForms Branded Styling
+   Version: 2.0
+   Last Updated: March 2026
+
+   Comprehensive styling for WPForms plugin with Lewers Logic brand
+   colors and design system.
+
+   Usage: Add this as "Additional CSS" in WordPress Customizer
+   or include in your theme's custom CSS section.
+*/
+
+/* ============================================================================
+   CUSTOM PROPERTIES
+   ============================================================================ */
+
+:root {
+  --ll-blue-dark: #081634;
+  --ll-blue-navy: #0D2B49;
+  --ll-teal-main: #25A09C;
+  --ll-teal-light: #9DD2D0;
+  --ll-teal-dark: #318C88;
+  --ll-gold-main: #C4962C;
+  --ll-gold-light: #E0C97A;
+  --ll-gold-dark: #A67A1E;
+  --ll-gray-light: #E9F0EF;
+  --ll-gray-dark: #727578;
+  --ll-white: #FFFFFF;
+  --ll-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ll-space-sm: 8px;
+  --ll-space-md: 16px;
+  --ll-space-lg: 24px;
+  --ll-radius-sm: 4px;
+  --ll-radius-md: 8px;
+  --ll-shadow-1: 0 2px 4px rgba(8, 22, 52, 0.1);
+  --ll-shadow-2: 0 4px 8px rgba(8, 22, 52, 0.15);
+  --ll-shadow-inset: inset 0 1px 2px rgba(8, 22, 52, 0.1);
+}
+
+/* ============================================================================
+   FORM CONTAINER
+   ============================================================================ */
+
+.wpforms-container {
+  font-family: var(--ll-font-primary);
+  color: var(--ll-blue-dark);
+}
+
+.wpforms-form {
+  margin: 0;
+  padding: 0;
+}
+
+.wpforms-container-full {
+  max-width: 100%;
+}
+
+.wpforms-container-full .wpforms-form {
+  width: 100%;
+}
+
+/* ============================================================================
+   FORM FIELDS & LABELS
+   ============================================================================ */
+
+.wpforms-field {
+  margin-bottom: var(--ll-space-lg);
+  position: relative;
+}
+
+.wpforms-field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--ll-space-sm);
+  color: var(--ll-blue-dark);
+}
+
+.wpforms-field-label-inline {
+  display: inline;
+  margin-right: var(--ll-space-md);
+}
+
+/* Required indicator */
+.wpforms-required-label {
+  color: var(--ll-teal-main);
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.wpforms-field-description {
+  font-size: 12px;
+  color: var(--ll-gray-dark);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ============================================================================
+   TEXT INPUTS
+   ============================================================================ */
+
+.wpforms-field input[type="text"],
+.wpforms-field input[type="email"],
+.wpforms-field input[type="password"],
+.wpforms-field input[type="number"],
+.wpforms-field input[type="phone"],
+.wpforms-field input[type="url"],
+.wpforms-field input[type="date"],
+.wpforms-field input[type="time"],
+.wpforms-field textarea,
+.wpforms-field select {
+  width: 100%;
+  padding: var(--ll-space-sm) var(--ll-space-md);
+  border: 1px solid #d0d0d0;
+  border-radius: var(--ll-radius-md);
+  font-family: var(--ll-font-primary);
+  font-size: 16px;
+  color: var(--ll-blue-dark);
+  background-color: var(--ll-white);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wpforms-field input[type="text"]:focus,
+.wpforms-field input[type="email"]:focus,
+.wpforms-field input[type="password"]:focus,
+.wpforms-field input[type="number"]:focus,
+.wpforms-field input[type="phone"]:focus,
+.wpforms-field input[type="url"]:focus,
+.wpforms-field input[type="date"]:focus,
+.wpforms-field input[type="time"]:focus,
+.wpforms-field textarea:focus,
+.wpforms-field select:focus {
+  outline: none;
+  border-color: var(--ll-teal-main);
+  box-shadow: 0 0 0 3px rgba(37, 160, 156, 0.15);
+  background-color: var(--ll-white);
+}
+
+.wpforms-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.wpforms-field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23081634' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 20px;
+  padding-right: 36px;
+  appearance: none;
+}
+
+/* ============================================================================
+   CHECKBOXES & RADIO BUTTONS
+   ============================================================================ */
+
+.wpforms-field-checkbox .wpforms-field-label,
+.wpforms-field-radio .wpforms-field-label {
+  display: block;
+  margin-bottom: var(--ll-space-md);
+  font-weight: 500;
+}
+
+.wpforms-field input[type="checkbox"],
+.wpforms-field input[type="radio"] {
+  width: auto;
+  margin-right: var(--ll-space-sm);
+  cursor: pointer;
+  accent-color: var(--ll-teal-main);
+}
+
+.wpforms-field-checkbox ul,
+.wpforms-field-radio ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wpforms-field-checkbox li,
+.wpforms-field-radio li {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--ll-space-sm);
+}
+
+.wpforms-field-checkbox label,
+.wpforms-field-radio label {
+  display: inline;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* ============================================================================
+   DROPDOWNS & SELECT
+   ============================================================================ */
+
+.wpforms-field-select select,
+.wpforms-field select {
+  min-height: 44px;
+  padding: var(--ll-space-sm) var(--ll-space-md);
+}
+
+/* ============================================================================
+   SUBMIT BUTTON (TEAL PRIMARY)
+   ============================================================================ */
+
+.wpforms-submit {
+  background-color: var(--ll-teal-main);
+  color: var(--ll-white);
+  font-family: var(--ll-font-primary);
+  font-size: 16px;
+  font-weight: 600;
+  padding: var(--ll-space-sm) var(--ll-space-lg);
+  border: none;
+  border-radius: var(--ll-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--ll-shadow-1);
+  min-height: 44px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+}
+
+.wpforms-submit:hover {
+  background-color: var(--ll-teal-dark);
+  box-shadow: var(--ll-shadow-2);
+}
+
+.wpforms-submit:active {
+  background-color: var(--ll-teal-dark);
+  box-shadow: var(--ll-shadow-inset);
+  transform: translateY(1px);
+}
+
+.wpforms-submit:focus {
+  outline: 2px solid var(--ll-teal-light);
+  outline-offset: 2px;
+}
+
+.wpforms-submit:disabled {
+  background-color: var(--ll-gray-dark);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ============================================================================
+   GOLD ACCENT VARIANT (Optional secondary button)
+   ============================================================================ */
+
+.wpforms-gold .wpforms-submit,
+.wpforms-form.wpforms-gold-submit .wpforms-submit {
+  background-color: var(--ll-gold-main);
+  color: var(--ll-white);
+}
+
+.wpforms-gold .wpforms-submit:hover,
+.wpforms-form.wpforms-gold-submit .wpforms-submit:hover {
+  background-color: var(--ll-gold-dark);
+  box-shadow: var(--ll-shadow-2);
+}
+
+.wpforms-gold .wpforms-submit:active,
+.wpforms-form.wpforms-gold-submit .wpforms-submit:active {
+  background-color: var(--ll-gold-dark);
+  box-shadow: var(--ll-shadow-inset);
+}
+
+.wpforms-gold .wpforms-submit:focus,
+.wpforms-form.wpforms-gold-submit .wpforms-submit:focus {
+  outline: 2px solid var(--ll-gold-light);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   SUCCESS MESSAGE (Confirmation)
+   ============================================================================ */
+
+.wpforms-confirmation-container {
+  background-color: rgba(37, 160, 156, 0.08);
+  border: 1px solid rgba(37, 160, 156, 0.3);
+  border-left: 4px solid var(--ll-teal-main);
+  border-radius: var(--ll-radius-md);
+  padding: var(--ll-space-lg);
+  margin: var(--ll-space-lg) 0;
+  color: var(--ll-blue-dark);
+}
+
+.wpforms-confirmation-container-success {
+  background-color: rgba(37, 160, 156, 0.08);
+  border-left-color: var(--ll-teal-main);
+}
+
+.wpforms-confirmation-container-success h3 {
+  color: var(--ll-teal-dark);
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.wpforms-confirmation-container p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* ============================================================================
+   ERROR/VALIDATION MESSAGES
+   ============================================================================ */
+
+.wpforms-error {
+  color: #cc0000;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+
+.wpforms-field-error input[type="text"],
+.wpforms-field-error input[type="email"],
+.wpforms-field-error input[type="password"],
+.wpforms-field-error input[type="number"],
+.wpforms-field-error input[type="phone"],
+.wpforms-field-error input[type="url"],
+.wpforms-field-error textarea,
+.wpforms-field-error select {
+  border-color: #cc0000;
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.1);
+}
+
+.wpforms-container-form-error {
+  background-color: rgba(204, 0, 0, 0.05);
+  border: 1px solid #cc0000;
+  border-left: 4px solid #cc0000;
+  border-radius: var(--ll-radius-md);
+  padding: var(--ll-space-lg);
+  margin: var(--ll-space-lg) 0;
+  color: var(--ll-blue-dark);
+}
+
+.wpforms-container-form-error h3 {
+  color: #cc0000;
+  margin-top: 0;
+}
+
+.wpforms-container-form-error ul {
+  margin: 0;
+  padding-left: var(--ll-space-lg);
+}
+
+/* ============================================================================
+   PROGRESS BAR / MULTI-STEP FORM
+   ============================================================================ */
+
+.wpforms-progress {
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  margin-bottom: var(--ll-space-lg);
+  overflow: hidden;
+}
+
+.wpforms-progress-bar {
+  height: 100%;
+  background-color: var(--ll-teal-main);
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.wpforms-progress-bar.gold {
+  background-color: var(--ll-gold-main);
+}
+
+.wpforms-multi-step {
+  display: none;
+}
+
+.wpforms-multi-step.active {
+  display: block;
+}
+
+.wpforms-step-buttons {
+  display: flex;
+  gap: var(--ll-space-md);
+  margin-top: var(--ll-space-lg);
+  justify-content: flex-end;
+}
+
+.wpforms-step-back,
+.wpforms-step-next {
+  padding: var(--ll-space-sm) var(--ll-space-lg);
+  border-radius: var(--ll-radius-md);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--ll-font-primary);
+  font-size: 16px;
+  min-height: 44px;
+  text-align: center;
+}
+
+.wpforms-step-back {
+  background-color: #f0f0f0;
+  color: var(--ll-blue-dark);
+  border: 1px solid #d0d0d0;
+}
+
+.wpforms-step-back:hover {
+  background-color: #e0e0e0;
+}
+
+.wpforms-step-next {
+  background-color: var(--ll-teal-main);
+  color: var(--ll-white);
+  box-shadow: var(--ll-shadow-1);
+}
+
+.wpforms-step-next:hover {
+  background-color: var(--ll-teal-dark);
+  box-shadow: var(--ll-shadow-2);
+}
+
+/* ============================================================================
+   PAGE BREAKS (Multi-Page Forms)
+   ============================================================================ */
+
+.wpforms-page-break {
+  display: none;
+}
+
+.wpforms-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ll-blue-dark);
+  margin-bottom: var(--ll-space-lg);
+}
+
+.wpforms-page-description {
+  font-size: 16px;
+  color: var(--ll-gray-dark);
+  margin-bottom: var(--ll-space-lg);
+}
+
+/* ============================================================================
+   FIELD LAYOUT & RESPONSIVE
+   ============================================================================ */
+
+.wpforms-field-row {
+  display: flex;
+  gap: var(--ll-space-md);
+  margin-bottom: var(--ll-space-lg);
+  flex-wrap: wrap;
+}
+
+.wpforms-field-row-50 .wpforms-field {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 200px;
+}
+
+.wpforms-field-row-33 .wpforms-field {
+  flex: 1 1 calc(33.333% - 11px);
+  min-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .wpforms-field-row-50 .wpforms-field,
+  .wpforms-field-row-33 .wpforms-field {
+    flex: 1 1 100%;
+  }
+}
+
+/* ============================================================================
+   SPECIAL FIELD TYPES
+   ============================================================================ */
+
+/* Signature field */
+.wpforms-field-signature canvas {
+  border: 1px solid #d0d0d0;
+  border-radius: var(--ll-radius-md);
+  background-color: var(--ll-white);
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* File upload */
+.wpforms-field-file input[type="file"] {
+  padding: var(--ll-space-sm);
+}
+
+.wpforms-field-file .file-upload-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Rating field */
+.wpforms-field-rating .rating-container {
+  display: flex;
+  gap: var(--ll-space-sm);
+}
+
+.wpforms-field-rating .star {
+  font-size: 24px;
+  color: #d0d0d0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wpforms-field-rating .star:hover,
+.wpforms-field-rating .star.active {
+  color: var(--ll-gold-main);
+}
+
+/* Likert/Matrix field */
+.wpforms-field-likert-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.wpforms-field-likert-table th,
+.wpforms-field-likert-table td {
+  padding: var(--ll-space-md);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.wpforms-field-likert-table th {
+  background-color: var(--ll-gray-light);
+  font-weight: 600;
+  color: var(--ll-blue-dark);
+}
+
+.wpforms-field-likert-table input[type="radio"] {
+  accent-color: var(--ll-teal-main);
+}
+
+/* ============================================================================
+   FORM CONTAINER STYLING
+   ============================================================================ */
+
+.wpforms-container-full {
+  margin-bottom: var(--ll-space-lg);
+}
+
+/* Optional: Card-style form container */
+.wpforms-form-card {
+  background-color: var(--ll-white);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--ll-radius-md);
+  padding: var(--ll-space-lg);
+  box-shadow: var(--ll-shadow-1);
+}
+
+.wpforms-form-card:hover {
+  box-shadow: var(--ll-shadow-2);
+}
+
+/* ============================================================================
+   ACCESSIBLE FOCUS STATES
+   ============================================================================ */
+
+.wpforms-field input:focus-visible,
+.wpforms-field textarea:focus-visible,
+.wpforms-field select:focus-visible,
+.wpforms-submit:focus-visible {
+  outline: 2px solid var(--ll-teal-light);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .wpforms-container {
+    color: #e0e0e0;
+  }
+
+  .wpforms-field input[type="text"],
+  .wpforms-field input[type="email"],
+  .wpforms-field input[type="password"],
+  .wpforms-field input[type="number"],
+  .wpforms-field input[type="phone"],
+  .wpforms-field input[type="url"],
+  .wpforms-field input[type="date"],
+  .wpforms-field input[type="time"],
+  .wpforms-field textarea,
+  .wpforms-field select {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #333;
+  }
+
+  .wpforms-field input[type="text"]:focus,
+  .wpforms-field input[type="email"]:focus,
+  .wpforms-field input[type="password"]:focus,
+  .wpforms-field input[type="number"]:focus,
+  .wpforms-field input[type="phone"]:focus,
+  .wpforms-field input[type="url"]:focus,
+  .wpforms-field input[type="date"]:focus,
+  .wpforms-field input[type="time"]:focus,
+  .wpforms-field textarea:focus,
+  .wpforms-field select:focus {
+    border-color: var(--ll-teal-light);
+    box-shadow: 0 0 0 3px rgba(157, 210, 208, 0.2);
+    background-color: #2a2a2a;
+  }
+
+  .wpforms-field-label {
+    color: #e0e0e0;
+  }
+
+  .wpforms-field-description {
+    color: #b0b0b0;
+  }
+
+  .wpforms-confirmation-container {
+    background-color: rgba(157, 210, 208, 0.1);
+    color: #e0e0e0;
+  }
+
+  .wpforms-confirmation-container h3 {
+    color: var(--ll-teal-light);
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  .wpforms-submit,
+  .wpforms-step-buttons {
+    display: none;
+  }
+
+  .wpforms-field input,
+  .wpforms-field textarea,
+  .wpforms-field select {
+    border: 1px solid #000;
+    background-color: transparent;
+  }
+}

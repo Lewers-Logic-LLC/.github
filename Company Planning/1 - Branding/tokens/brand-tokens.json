@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "name": "Lewers Logic LLC Brand Tokens",
+  "color": {
+    "primary": {
+      "dark": {
+        "value": "#081634",
+        "name": "Deep Logic Blue",
+        "description": "Primary dark color for headings, navigation, and core UI elements"
+      }
+    },
+    "accent": {
+      "teal": {
+        "value": "#25A09C",
+        "name": "Engineered Teal",
+        "description": "Primary accent for technology, product features, and interactive elements"
+      }
+    },
+    "background": {
+      "light": {
+        "value": "#E9F0EF",
+        "name": "Soft Gray",
+        "description": "Light background color for sections and containers"
+      }
+    },
+    "teal": {
+      "light": {
+        "value": "#9DD2D0",
+        "name": "Teal Light",
+        "description": "Teal variant for hover states and highlights"
+      },
+      "dark": {
+        "value": "#318C88",
+        "name": "Teal Dark",
+        "description": "Teal variant for pressed and active states"
+      }
+    },
+    "navy": {
+      "light": {
+        "value": "#0D2B49",
+        "name": "Navy Light",
+        "description": "Secondary dark color for additional depth"
+      }
+    },
+    "neutral": {
+      "near-black": {
+        "value": "#12131A",
+        "name": "Near Black",
+        "description": "Deepest dark neutral for maximum contrast"
+      },
+      "dark-gray": {
+        "value": "#727578",
+        "name": "Gray Dark",
+        "description": "Dark gray for captions, metadata, and secondary text"
+      },
+      "white": {
+        "value": "#FFFFFF",
+        "name": "White",
+        "description": "Pure white for text, borders, and light surfaces"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": {
+        "value": "Inter",
+        "description": "Primary font family for all body text and UI"
+      },
+      "monospace": {
+        "value": "JetBrains Mono",
+        "description": "Monospace font for code and technical content"
+      },
+      "fallback": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+        "description": "System font stack fallback"
+      }
+    },
+    "fontSize": {
+      "body": { "value": "12px", "description": "Base body text size" },
+      "body-lg": { "value": "14px", "description": "Large body text size" },
+      "h4": { "value": "16px", "description": "Heading 4 size" },
+      "h3": { "value": "20px", "description": "Heading 3 size" },
+      "h2": { "value": "24px", "description": "Heading 2 size" },
+      "h1": { "value": "32px", "description": "Heading 1 size" },
+      "display": { "value": "40px", "description": "Display/hero heading size" }
+    }
+  },
+  "spacing": {
+    "4": { "value": "4px" }, "8": { "value": "8px" }, "12": { "value": "12px" },
+    "16": { "value": "16px" }, "24": { "value": "24px" }, "32": { "value": "32px" },
+    "48": { "value": "48px" }, "64": { "value": "64px" }, "96": { "value": "96px" }
+  },
+  "borderRadius": {
+    "sm": { "value": "4px", "description": "Small border radius" },
+    "md": { "value": "8px", "description": "Medium border radius" },
+    "lg": { "value": "12px", "description": "Large border radius" },
+    "xl": { "value": "16px", "description": "Extra large border radius" },
+    "full": { "value": "9999px", "description": "Full/pill border radius" }
+  },
+  "shadow": {
+    "sm": { "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)", "description": "Small shadow" },
+    "md": { "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", "description": "Medium shadow" },
+    "lg": { "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)", "description": "Large shadow" }
+  }
+}
