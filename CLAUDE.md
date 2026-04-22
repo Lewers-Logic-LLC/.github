@@ -1,49 +1,50 @@
 # Working Memory
 
 ## Me
-**Tommy Lewers** — Founder & Senior Developer at Lewers Logic LLC  
-Email: tommy@llogicsoftware.com  
-Tech: .NET Core C#, Azure, Blazor, Entity Framework Core
-
-## People
-| Who | Role | Notes |
-|-----|------|-------|
-| **Kyle Tate** | Investing Partner & Legal Counsel | Co-founder of Tate legal practice |
-| **Brenda Tate** | Investing Partner & Legal Counsel | Co-founder of Tate legal practice |
-| **Debra Bunge** | KISAN America, Partnership Lead | Stakeholder in Recycler.IQ |
-| **Patrick Moore** | KISAN America, Partnership | Stakeholder in Recycler.IQ |
-
-## Terms
-| Term | Meaning |
-|------|---------|
-| **RIQ** | Recycler.IQ (product) |
-| **KISAN** | KISAN America (tax software partner) |
-| **Sprint 1** | Current dev sprint (Mar 29 — Apr 19, 2026) |
-| **GA** | General Availability (v1.0 release) |
-| **ADR** | Architecture Decision Record |
-| **CIT** | Cash-In-Transit |
-| **ML** | Machine Learning (forecasting engine) |
+**Tommy Lewers** — Founder & Senior Developer at Lewers Logic LLC
+Email: tommy@llogicsoftware.com | Tech: .NET Core C#, Azure, Blazor, EF Core
 
 ## Projects
 | Name | Jira Key | What |
 |------|----------|------|
-| **Recycler.IQ** | — | Core product — ML-powered recycler cash flow optimization |
-| **RCORE** | RCORE | Shared domain/packages foundation (in progress) |
-| **RCLIENT** | RCLIENT | MAUI Blazor + Blazor Server clients (50% complete) |
-| **RCLOUD** | RCLOUD | Cloud API, portal, analytics (backlog) |
-| **RLINK** | RLINK | Edge service, hardware abstraction (backlog) |
-| **RIQSIM** | RIQSIM | Hardware simulator for dev/demo (backlog) |
-| **Legal Mind** | LM | LegalMind MCP Server — legal research tools (planning phase) |
+| **Recycler.IQ (RIQ)** | — | ML-powered recycler cash flow optimization |
+| **RCORE** | RCORE | Shared domain/packages foundation |
+| **RCLIENT** | RCLIENT | MAUI Blazor + Blazor Server clients |
+| **RCLOUD** | RCLOUD | Cloud API, portal, analytics |
+| **RLINK** | RLINK | Edge service, hardware abstraction |
+| **RIQSIM** | RIQSIM | Hardware simulator |
+| **Legal Mind (LM)** | LM | LegalMind MCP Server |
+
+Current sprint: `sprint/recycler.iq-2` (Sprint 2).
 
 ## Repo-to-Jira Mapping
 | Repo Directory | Jira Key |
 |----------------|----------|
 | `Recycler.IQ/recycleriq-core` | RCORE |
-| `Recycler.IQ/recycleriq-client` | RCLIENT |
+| `Recycler.IQ/recycleriq-clients` | RCLIENT |
 | `Recycler.IQ/recycleriq-cloud` | RCLOUD |
 | `Recycler.IQ/recycleriq-link` | RLINK |
-| `Recycler.IQ/recycleriq-sim` | RIQSIM |
+| `Recycler.IQ/recycleriq-simulator` | RIQSIM |
 | `legal-mind` | LM |
+
+## Atlassian
+| Site | CloudId |
+|------|---------|
+| llogic.atlassian.net | d2705d7b-8040-4cae-905c-f1014414e770 |
+
+Agents MUST prefer the CloudId above over calling `getAccessibleAtlassianResources`. Only resolve via MCP if the value is missing from this file.
+
+## Repo-to-Design Mapping
+| Repo Directory | Design Skill | CSS Prefix |
+|----------------|--------------|-----------|
+| `Recycler.IQ/recycleriq-core` | `recycleriq-design` | `--riq-` |
+| `Recycler.IQ/recycleriq-clients` | `recycleriq-design` | `--riq-` |
+| `Recycler.IQ/recycleriq-cloud` | `recycleriq-design` | `--riq-` |
+| `Recycler.IQ/recycleriq-link` | `recycleriq-design` | `--riq-` |
+| `Recycler.IQ/recycleriq-simulator` | `recycleriq-design` | `--riq-` |
+| `legal-mind` | `legalmind-design` | `--ll-` |
+
+For any UI work (Blazor/Razor/CSS/MAUI views/MudBlazor theme/data viz), invoke the matching design skill BEFORE writing code. Never mix prefixes across brands.
 
 ## Accessible Directories
 - `/Lewers Logic LLC/` (company root)
@@ -74,17 +75,9 @@ When creating or updating PRDs and ADRs, always set the `Status` field:
 - Only PRDs contain syncable user stories (not ADRs)
 
 ## Per-Section Jira Sync Markers
-Each requirement section in a PRD has an HTML comment marker tracking its Jira sync state:
-- **Synced:** `<!-- Jira: LM-5 | Epic: LM-15 | Synced: 2026-04-09 -->` — story exists in Jira
-- **Multi-story:** Multiple markers on consecutive lines if a section maps to multiple stories
-- **Not yet synced:** `<!-- Jira: NONE | Synced: N/A -->` — no Jira story exists; candidate for creation
-- **With notes:** `<!-- Jira: KEY | Epic: EPIC | Synced: DATE | Note: context -->` — optional note field
-
-Rules:
-- When creating new PRD requirement sections, always add `<!-- Jira: NONE | Synced: N/A -->` as a placeholder
-- After creating a Jira story for a section, update the marker with the story key, epic, and date
-- Never create duplicate Jira stories — always check the marker first
-- The scheduled task scans for `Jira: NONE` markers and alerts Tommy for approval before creating stories
-- Doc-level Status (Final, Draft, etc.) is for document maturity, NOT for Jira sync gating
-
-## Do
+Each PRD requirement section has an HTML comment tracking its Jira sync state:
+- `<!-- Jira: NONE | Synced: N/A -->` — placeholder on new sections (candidate for creation)
+- `<!-- Jira: KEY | Epic: EPIC-KEY | Synced: YYYY-MM-DD -->` — after story created
+- Multi-story sections: consecutive markers, one per story
+- Scheduled task scans `Jira: NONE` markers and asks for approval before creating stories — always check marker before creating to avoid duplicates
+- Doc-level Status (Final/Draft) is for doc maturity, NOT Jira sync gating

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1d21; color: #d1d2d3; min-height: 100vh; padding: 24px; }
+  h1 { text-align: center; color: #fff; font-size: 18px; margin-bottom: 24px; letter-spacing: 0.5px; }
+  .layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1400px; margin: 0 auto; }
+  .canvas-wrap { display: flex; flex-direction: column; }
+  .canvas-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #868686; margin-bottom: 8px; padding-left: 4px; }
+  .canvas-id { font-size: 10px; color: #555; padding-left: 4px; margin-bottom: 12px; }
+  .canvas { background: #222529; border-radius: 12px; border: 1px solid #333; padding: 28px; font-size: 13.5px; line-height: 1.7; overflow-y: auto; max-height: 82vh; }
+  .canvas h1 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 16px; text-align: left; }
+  .canvas h2 { font-size: 15px; font-weight: 700; color: #e8e8e8; margin: 22px 0 10px; border-bottom: 1px solid #333; padding-bottom: 6px; }
+  .canvas h3 { font-size: 13px; font-weight: 600; color: #aaa; margin: 14px 0 6px; font-style: italic; }
+  .canvas p { margin-bottom: 10px; color: #b0b1b3; }
+  .canvas ul { padding-left: 20px; margin-bottom: 12px; }
+  .canvas li { margin-bottom: 5px; color: #b0b1b3; }
+  .canvas strong { color: #e0e0e0; }
+  .canvas hr { border: none; border-top: 1px solid #333; margin: 18px 0; }
+  .callout { background: #2c3e50; border-left: 3px solid #4a90d9; border-radius: 6px; padding: 12px 16px; margin: 12px 0; font-size: 13px; color: #c5d8ef; }
+  .callout strong { color: #7ab8f5; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12.5px; }
+  th { background: #2c2f35; color: #aaa; font-weight: 600; padding: 8px 10px; text-align: left; border-bottom: 1px solid #3a3d42; }
+  td { padding: 7px 10px; border-bottom: 1px solid #2c2f35; color: #b8b9bb; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: #1a3a2a; color: #4caf82; }
+  .badge-yellow { background: #3a3010; color: #f0b429; }
+  .badge-blue { background: #1a2a3a; color: #4a90d9; }
+  .badge-red { background: #3a1a1a; color: #e05252; }
+  .stale-notice { background: #3a2a10; border: 1px solid #6b4c00; border-radius: 8px; padding: 8px 14px; font-size: 11px; color: #d4a04a; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .footer-note { font-size: 11px; color: #555; font-style: italic; margin-top: 8px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>📋 Current Slack Canvases — #proj-recycler-iq</h1>
+
+<div class="layout">
+
+  <!-- CANVAS 1 -->
+  <div class="canvas-wrap">
+    <div class="canvas-label">Canvas 1</div>
+    <div class="canvas-id">F0AKQ2DVA1W · Last updated: March 5, 2026</div>
+    <div class="canvas">
+      <div class="stale-notice">⚠️ Stale — last updated March 5, 2026 (44 days ago)</div>
+
+      <h1>🔵 Recycler.IQ Project Issues</h1>
+      <p style="font-size:12px;color:#666;">Track all Recycler.IQ project Jira issues · Channel: #proj-recycler-iq</p>
+
+      <hr>
+
+      <h2>💡 Quick Tips</h2>
+      <div class="callout">
+        <strong>Sprint 1 Status (Mar 29 – Apr 19, 2026):</strong> 103 of 286 total issues completed (36%). RCORE nearly finished at 98% completion. One blocked item: RLINK-3 "Sync & Background Services" requires resolution.
+      </div>
+
+      <hr>
+
+      <h2>▶️ In Progress</h2>
+      <p><strong>RCORE</strong> — 1 issue remaining (98% complete). Critical infrastructure work nearly done.</p>
+      <p><strong>RCLIENT</strong> — 5 issues in progress (24% complete). Active development on cross-platform applications.</p>
+      <p><strong>RLINK</strong> — 5 issues in progress (63% complete). <strong style="color:#e05252">BLOCKED:</strong> RLINK-3 needs resolution.</p>
+      <p><strong>RIQSIM</strong> — 1 issue in progress (29% complete). Visual control panel development.</p>
+      <p><strong>LM (Legal Mind)</strong> — 12 issues in progress (11% complete).</p>
+
+      <hr>
+
+      <h2>📝 To Do / Backlog</h2>
+      <p><strong>RCLOUD</strong> — 65 issues in backlog (0% complete). All cloud infrastructure work pending.</p>
+      <p>Additional backlog: RCLIENT features, RLINK sync components, RIQSIM hardware testing.</p>
+
+      <hr>
+
+      <h2>✅ Done (Recent)</h2>
+      <p><strong>RCORE:</strong> 54 of 55 issues completed</p>
+      <p><strong>RCLIENT:</strong> 16 of 68 issues completed</p>
+      <p><strong>RLINK:</strong> 20 of 32 issues completed</p>
+      <p><strong>RIQSIM:</strong> 9 of 31 issues completed</p>
+      <p><strong>LM:</strong> 4 of 35 issues completed</p>
+
+      <hr>
+
+      <h2>📈 Project Stats</h2>
+      <ul>
+        <li><strong>Total issues:</strong> 286 across 6 projects</li>
+        <li><strong>Completed:</strong> 103 (36%)</li>
+        <li><strong>In progress:</strong> 24 issues</li>
+        <li><strong>Sprint 1 progress:</strong> 68% complete (Day 15 of 22)</li>
+        <li><strong>Blocked items:</strong> 1 (RLINK-3)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CANVAS 2 -->
+  <div class="canvas-wrap">
+    <div class="canvas-label">Canvas 2</div>
+    <div class="canvas-id">F0AT1N89DQ9 · Created: April 13, 2026</div>
+    <div class="canvas">
+      <div class="stale-notice">⚠️ Stale stats — created Apr 13 but sprint data not current</div>
+
+      <h1>🔄 Recycler.IQ Project Overview</h1>
+
+      <div class="callout">
+        <strong>Project Status:</strong> Active development across 6 sub-projects with 286 total Jira issues. Sprint 1 (Mar 29 – Apr 19, 2026) is 68% complete with RCORE nearly finished at 98% completion.
+      </div>
+
+      <h2>📋 Project Summary</h2>
+      <p>Recycler.IQ is a comprehensive cash management platform designed to integrate with hardware cash recyclers, specifically targeting the ATEC LT380 and Kisan KR10 devices. The project encompasses both client applications and cloud infrastructure to provide real-time cash inventory tracking, predictive analytics, and automated logistics management for financial institutions.</p>
+
+      <h2>🏗️ Architecture & Technology Stack</h2>
+      <ul>
+        <li><strong>.NET MAUI Blazor Hybrid</strong> for cross-platform client applications</li>
+        <li><strong>Blazor Server</strong> for web-based interfaces and simulator components</li>
+        <li><strong>ML.NET</strong> for predictive cash inventory analytics and forecasting</li>
+        <li><strong>Hardware Integration</strong> via native SDKs for cash recycler communication</li>
+      </ul>
+      <p style="font-size:12px;color:#666;">Microservices architecture with independent CI/CD pipelines per sub-project.</p>
+
+      <h2>📊 Project Structure</h2>
+      <table>
+        <thead><tr><th>Project</th><th>Focus Area</th><th>Completion</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>RCORE</strong></td><td>Core libraries & shared components</td><td>98%</td><td><span class="badge badge-green">Near Complete</span></td></tr>
+          <tr><td><strong>RCLIENT</strong></td><td>Client applications (MAUI/Blazor)</td><td>24%</td><td><span class="badge badge-yellow">Active Dev</span></td></tr>
+          <tr><td><strong>RLINK</strong></td><td>Sync & background services</td><td>63%</td><td><span class="badge badge-yellow">Active Dev</span></td></tr>
+          <tr><td><strong>RIQSIM</strong></td><td>Hardware simulator</td><td>29%</td><td><span class="badge badge-yellow">Active Dev</span></td></tr>
+          <tr><td><strong>RCLOUD</strong></td><td>Cloud infrastructure</td><td>0%</td><td><span class="badge badge-blue">Backlog</span></td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 Key Features</h2>
+      <p><strong>Dashboard & Monitoring:</strong> Real-time recycler status, denomination-level inventory, error alerts, transaction simulation.</p>
+      <p><strong>Predictive Analytics:</strong> ML.NET cash depletion forecasting, automated scheduling, 7-day net outflow calculations.</p>
+      <p><strong>Hardware Integration:</strong> ATEC LT380 and Kisan KR10 support, cross-platform abstraction layer.</p>
+
+      <h2>🚀 Current Sprint Progress</h2>
+      <p><strong>Sprint 1 Highlights (Mar 29 – Apr 19, 2026):</strong></p>
+      <ul>
+        <li>103 of 286 total issues completed (36%)</li>
+        <li>RCORE project nearing completion with critical infrastructure done</li>
+        <li>Active development on client applications and simulator</li>
+        <li><strong style="color:#e05252">Blocked:</strong> RLINK-3 "Sync & Background Services" requiring resolution</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<p class="footer-note">Both canvases are stale. Canvas 1 includes LM (Legal Mind) which should be excluded. Canvas 2 has the better structure — architecture, features, and project overview content worth keeping in the merge.</p>
+
+</body>
+</html>
