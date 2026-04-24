@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AskLewis — Logic Software</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    :root {
+      --product-primary: #311B92;
+      --product-accent:  #03A9F4;
+    }
+    .product-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .product-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0d0820 0%, #311B92 60%, #013a52 100%);
+    }
+    .product-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(3,169,244,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(3,169,244,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .product-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 4, 32, 0.50);
+      z-index: 1;
+    }
+    .product-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+      max-width: 820px;
+    }
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(3,169,244,0.12);
+      border: 1px solid rgba(3,169,244,0.3);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #03A9F4;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .product-hero-content h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .product-hero-content h1 span { color: #03A9F4; }
+    .product-hero-content p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .product-hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-product {
+      background: #03A9F4;
+      color: #fff;
+      box-shadow: 0 2px 16px rgba(3,169,244,0.35);
+    }
+    .btn-product:hover {
+      box-shadow: 0 6px 28px rgba(3,169,244,0.55);
+      opacity: 0.9;
+    }
+    .al-feature { border-color: rgba(3,169,244,0.12); }
+    .al-feature .feature-icon { background: rgba(3,169,244,0.10); }
+    .product-sub-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #03A9F4;
+      background: rgba(3,169,244,0.08);
+      border: 1px solid rgba(3,169,244,0.22);
+      border-radius: 8px;
+      padding: 6px 14px;
+      margin-left: 12px;
+    }
+    .section-label-product { color: #03A9F4; }
+
+    /* Chat demo mockup */
+    .chat-demo {
+      background: rgba(3,169,244,0.04);
+      border: 1px solid rgba(3,169,244,0.15);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .chat-msg {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .chat-msg.user { flex-direction: row-reverse; }
+    .chat-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .chat-avatar.lewis { background: linear-gradient(135deg, #311B92, #03A9F4); color: #fff; }
+    .chat-avatar.user-av { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+    .chat-bubble {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      max-width: 80%;
+    }
+    .chat-msg.user .chat-bubble {
+      background: rgba(3,169,244,0.12);
+      border-color: rgba(3,169,244,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="18" fill="#1A2B34"/>
+        <text x="8" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">{</text>
+        <text x="36" y="72" font-family="monospace" font-size="52" font-weight="900" fill="#26A69A">L</text>
+        <text x="62" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">}</text>
+      </svg>
+      <span class="nav-logo-text">Logic Software</span>
+      <span class="product-sub-logo">💬 AskLewis</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="recycle.html">$ Recycle</a></li>
+      <li><a href="asklewis.html" style="color:#03A9F4">AskLewis</a></li>
+      <li><a href="medcert.html">MedCert</a></li>
+      <li><a href="../contact.html" class="nav-cta" style="background:#03A9F4">Get a Demo</a></li>
+    </ul>
+    <div class="nav-accent-bar" style="background:#03A9F4"></div>
+  </nav>
+
+  <!-- Product Hero -->
+  <div class="product-hero">
+    <div class="product-hero-bg"></div>
+    <div class="product-hero-grid"></div>
+    <div class="product-hero-overlay"></div>
+    <div class="product-hero-content">
+      <div class="product-badge">💬 AI Knowledge Management</div>
+      <h1>Your Organization's Knowledge,<br><span>Finally Answerable</span></h1>
+      <p>AskLewis transforms scattered institutional knowledge into an intelligent, dialogue-driven platform — so your team gets answers in seconds, not hours of document searching.</p>
+      <div class="product-hero-actions">
+        <a href="../contact.html" class="btn btn-product">Request a Demo</a>
+        <a href="#features" class="btn btn-outline">See Features</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Mockup + Features -->
+  <section id="features">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div class="slide-in">
+        <p class="section-label section-label-product">Live Demo</p>
+        <h2>Ask Anything. Get Instant Answers.</h2>
+        <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:32px">AskLewis indexes your internal documents, wikis, and databases — then makes them conversational.</p>
+        <div class="chat-demo">
+          <div class="chat-msg user">
+            <div class="chat-avatar user-av">You</div>
+            <div class="chat-bubble">What's our current SLA for enterprise clients?</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar lewis">L</div>
+            <div class="chat-bubble">Enterprise clients receive a <strong>99.9% uptime SLA</strong> with a 4-hour response time for critical incidents. Source: Enterprise Agreements Policy v3.2, updated March 2026.</div>
+          </div>
+          <div class="chat-msg user">
+            <div class="chat-avatar user-av">You</div>
+            <div class="chat-bubble">Which accounts are currently at risk of churn?</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar lewis">L</div>
+            <div class="chat-bubble">Based on CRM data, <strong>3 accounts</strong> show elevated churn signals: Nexus Corp, Aldgate Health, and Pinnacle Logistics. All have open support tickets older than 14 days.</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px" class="slide-in">
+        <div class="feature-card al-feature">
+          <div class="feature-icon">🧠</div>
+          <h3>Enterprise-Grade RAG</h3>
+          <p>Retrieval-augmented generation over your private data — with citations, source links, and confidence indicators on every response.</p>
+        </div>
+        <div class="feature-card al-feature">
+          <div class="feature-icon">🔗</div>
+          <h3>Universal Connectors</h3>
+          <p>Connect Notion, Confluence, SharePoint, Salesforce, Jira, and 40+ data sources without custom engineering.</p>
+        </div>
+        <div class="feature-card al-feature">
+          <div class="feature-icon">🛡️</div>
+          <h3>Zero-Trust Data Access</h3>
+          <p>Responses respect your existing permission model — users only see knowledge they're authorized to access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Features -->
+  <section style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05)">
+    <div style="max-width:1100px;margin:0 auto">
+      <p class="section-label section-label-product slide-in">Full Feature Set</p>
+      <h2 class="slide-in">Built for Teams Who Move Fast</h2>
+      <div class="features-grid" style="margin-top:40px">
+        <div class="feature-card al-feature slide-in">
+          <div class="feature-icon">📂</div>
+          <h3>Smart Document Indexing</h3>
+          <p>Automatically ingests and indexes PDFs, Word docs, spreadsheets, and web pages — no manual tagging required.</p>
+        </div>
+        <div class="feature-card al-feature slide-in">
+          <div class="feature-icon">🌐</div>
+          <h3>Multi-Language Support</h3>
+          <p>Ask questions and receive answers in 25+ languages — essential for globally distributed teams.</p>
+        </div>
+        <div class="feature-card al-feature slide-in">
+          <div class="feature-icon">📊</div>
+          <h3>Usage Analytics</h3>
+          <p>See which questions get asked most, identify knowledge gaps, and measure ROI through detailed usage dashboards.</p>
+        </div>
+        <div class="feature-card al-feature slide-in">
+          <div class="feature-icon">🤖</div>
+          <h3>Custom AI Personas</h3>
+          <p>Configure Lewis to represent your brand voice — with custom greetings, scope limits, and escalation flows.</p>
+        </div>
+        <div class="feature-card al-feature slide-in">
+          <div class="feature-icon">⚙️</div>
+          <h3>Slack & Teams Integration</h3>
+          <p>Embed AskLewis directly into Slack and Microsoft Teams — your team gets answers without leaving their workflow.</p>
+        </div>
+        <div class="feature-card al-feature slide-in">
+          <div class="feature-icon">🔁</div>
+          <h3>Continuous Learning</h3>
+          <p>AskLewis learns from feedback signals — improving accuracy over time based on what your team validates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band slide-in" style="border-color:rgba(3,169,244,0.2)">
+    <p class="section-label section-label-product">Get Started</p>
+    <h2>Make Your Knowledge Work for You</h2>
+    <p>See AskLewis answer live questions from your own data in a personalized 30-minute demo.</p>
+    <a href="../contact.html" class="btn btn-product">Book a Live Demo</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="18" fill="#1A2B34"/>
+          <text x="8" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">{</text>
+          <text x="36" y="72" font-family="monospace" font-size="52" font-weight="900" fill="#26A69A">L</text>
+          <text x="62" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">}</text>
+        </svg>
+        <p>Enterprise SaaS solutions engineered for finance, compliance, and intelligent knowledge management.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="recycle.html">$ Recycle</a>
+        <a href="asklewis.html">AskLewis</a>
+        <a href="medcert.html">MedCert</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Logic Software. All rights reserved.
+    </div>
+  </footer>
+
+  <script>window.PRODUCT_ACCENT = '#03A9F4';</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

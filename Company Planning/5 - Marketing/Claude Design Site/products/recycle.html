@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$ Recycle — Logic Software</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    :root {
+      --product-primary: #0D47A1;
+      --product-accent:  #4CAF50;
+    }
+    .product-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .product-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #061529 0%, #0D47A1 60%, #1a5c1e 100%);
+    }
+    .product-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(76,175,80,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(76,175,80,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .product-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 21, 41, 0.50);
+      z-index: 1;
+    }
+    .product-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+      max-width: 820px;
+    }
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(76,175,80,0.15);
+      border: 1px solid rgba(76,175,80,0.3);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4CAF50;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .product-hero-content h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .product-hero-content h1 span { color: #4CAF50; }
+    .product-hero-content p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .product-hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-product {
+      background: #4CAF50;
+      color: #fff;
+      box-shadow: 0 2px 16px rgba(76,175,80,0.35);
+    }
+    .btn-product:hover {
+      box-shadow: 0 6px 28px rgba(76,175,80,0.55);
+      opacity: 0.9;
+    }
+    .recycle-feature { border-color: rgba(76,175,80,0.15); }
+    .recycle-feature .feature-icon { background: rgba(76,175,80,0.12); }
+    .product-sub-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #4CAF50;
+      background: rgba(76,175,80,0.1);
+      border: 1px solid rgba(76,175,80,0.25);
+      border-radius: 8px;
+      padding: 6px 14px;
+      margin-left: 12px;
+    }
+    .section-label-product { color: #4CAF50; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px 32px;
+    }
+    .pricing-card.featured {
+      background: rgba(76,175,80,0.08);
+      border-color: rgba(76,175,80,0.4);
+    }
+    .pricing-tier {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #4CAF50;
+      margin-bottom: 12px;
+    }
+    .pricing-price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pricing-price span { font-size: 1rem; color: rgba(255,255,255,0.4); }
+    .pricing-desc { color: rgba(255,255,255,0.5); font-size: 0.88rem; margin-bottom: 28px; line-height: 1.5; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .pricing-features li::before { content: '✓'; color: #4CAF50; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="18" fill="#1A2B34"/>
+        <text x="8" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">{</text>
+        <text x="36" y="72" font-family="monospace" font-size="52" font-weight="900" fill="#26A69A">L</text>
+        <text x="62" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">}</text>
+      </svg>
+      <span class="nav-logo-text">Logic Software</span>
+      <span class="product-sub-logo">♻️ $ Recycle</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="recycle.html" style="color:#4CAF50">$ Recycle</a></li>
+      <li><a href="asklewis.html">AskLewis</a></li>
+      <li><a href="medcert.html">MedCert</a></li>
+      <li><a href="../contact.html" class="nav-cta" style="background:#4CAF50">Get a Demo</a></li>
+    </ul>
+    <div class="nav-accent-bar" style="background:#4CAF50"></div>
+  </nav>
+
+  <!-- Product Hero -->
+  <div class="product-hero">
+    <div class="product-hero-bg"></div>
+    <div class="product-hero-grid"></div>
+    <div class="product-hero-overlay"></div>
+    <div class="product-hero-content">
+      <div class="product-badge">♻️ Financial Sustainability Platform</div>
+      <h1>Close the Loop on <span>Material Value</span></h1>
+      <p>$ Recycle automates circular-economy workflows, tracks material recovery at every stage, and generates compliance-ready financial and sustainability reporting — all in one platform.</p>
+      <div class="product-hero-actions">
+        <a href="../contact.html" class="btn btn-product">Request a Demo</a>
+        <a href="#features" class="btn btn-outline">See Features</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section id="features">
+    <div style="max-width:1100px;margin:0 auto">
+      <p class="section-label section-label-product slide-in">Core Capabilities</p>
+      <h2 class="slide-in">Everything You Need to<br>Manage Material Recovery</h2>
+      <p class="section-sub slide-in">Built specifically for recycling operations, material brokers, and sustainability officers navigating complex regulatory landscapes.</p>
+      <div class="features-grid">
+        <div class="feature-card recycle-feature slide-in">
+          <div class="feature-icon">📊</div>
+          <h3>Real-Time Material Tracking</h3>
+          <p>Track material streams from collection to processing with live dashboards showing weight, grade, and recovery rates across all facilities.</p>
+        </div>
+        <div class="feature-card recycle-feature slide-in">
+          <div class="feature-icon">💰</div>
+          <h3>Automated Commodity Pricing</h3>
+          <p>Pull live market prices for ferrous, non-ferrous, and specialty materials — auto-calculate material value and margin in real time.</p>
+        </div>
+        <div class="feature-card recycle-feature slide-in">
+          <div class="feature-icon">📋</div>
+          <h3>Compliance Reporting</h3>
+          <p>One-click generation of EPA, state-level, and ESG reports — formatted to meet regulatory requirements with full audit trails.</p>
+        </div>
+        <div class="feature-card recycle-feature slide-in">
+          <div class="feature-icon">🔄</div>
+          <h3>Workflow Automation</h3>
+          <p>Define collection routes, vendor schedules, and processing queues — automate handoffs and eliminate manual coordination overhead.</p>
+        </div>
+        <div class="feature-card recycle-feature slide-in">
+          <div class="feature-icon">🤝</div>
+          <h3>Vendor & Buyer Network</h3>
+          <p>Connect directly with verified material buyers and certified processors through our integrated marketplace layer.</p>
+        </div>
+        <div class="feature-card recycle-feature slide-in">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Field App</h3>
+          <p>Field teams log pickups, weights, and conditions from any device — data syncs instantly to the central dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05)">
+    <div style="max-width:1100px;margin:0 auto">
+      <p class="section-label section-label-product slide-in">Pricing</p>
+      <h2 class="slide-in">Simple, Transparent Plans</h2>
+      <p class="section-sub slide-in">Scale your plan as your operations grow. No hidden fees, no per-seat gotchas.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card slide-in">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">$499<span>/mo</span></div>
+          <p class="pricing-desc">For single-facility operators getting started with digital operations.</p>
+          <ul class="pricing-features">
+            <li>1 facility</li>
+            <li>Up to 10 users</li>
+            <li>Material tracking dashboard</li>
+            <li>Basic compliance reports</li>
+            <li>Email support</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-outline" style="width:100%;justify-content:center">Get Started</a>
+        </div>
+        <div class="pricing-card featured slide-in">
+          <div class="pricing-tier">Professional</div>
+          <div class="pricing-price">$1,499<span>/mo</span></div>
+          <p class="pricing-desc">For growing operations managing multiple facilities and vendor networks.</p>
+          <ul class="pricing-features">
+            <li>Up to 5 facilities</li>
+            <li>Unlimited users</li>
+            <li>Live commodity pricing</li>
+            <li>Full compliance suite</li>
+            <li>Vendor marketplace access</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-product" style="width:100%;justify-content:center">Get Started</a>
+        </div>
+        <div class="pricing-card slide-in">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-price">Custom</div>
+          <p class="pricing-desc">For large-scale operations with custom integration and compliance needs.</p>
+          <ul class="pricing-features">
+            <li>Unlimited facilities</li>
+            <li>Custom integrations (ERP, WMS)</li>
+            <li>Dedicated success manager</li>
+            <li>Custom reporting</li>
+            <li>SLA guarantee</li>
+            <li>On-site onboarding</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-outline" style="width:100%;justify-content:center">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band slide-in" style="border-color:rgba(76,175,80,0.25)">
+    <p class="section-label section-label-product">Ready to Start?</p>
+    <h2>See $ Recycle in Action</h2>
+    <p>Book a 30-minute demo with our team and see how $ Recycle can transform your operations within 90 days.</p>
+    <a href="../contact.html" class="btn btn-product">Book a Free Demo</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="18" fill="#1A2B34"/>
+          <text x="8" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">{</text>
+          <text x="36" y="72" font-family="monospace" font-size="52" font-weight="900" fill="#26A69A">L</text>
+          <text x="62" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">}</text>
+        </svg>
+        <p>Enterprise SaaS solutions engineered for finance, compliance, and intelligent knowledge management.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="recycle.html">$ Recycle</a>
+        <a href="asklewis.html">AskLewis</a>
+        <a href="medcert.html">MedCert</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Logic Software. All rights reserved.
+    </div>
+  </footer>
+
+  <script>window.PRODUCT_ACCENT = '#4CAF50';</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

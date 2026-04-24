@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Logic Software</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="18" fill="#1A2B34"/>
+        <text x="8" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">{</text>
+        <text x="36" y="72" font-family="monospace" font-size="52" font-weight="900" fill="#26A69A">L</text>
+        <text x="62" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">}</text>
+      </svg>
+      <span class="nav-logo-text">Logic Software</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products/recycle.html">$ Recycle</a></li>
+      <li><a href="products/asklewis.html">AskLewis</a></li>
+      <li><a href="products/medcert.html">MedCert</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <div class="nav-accent-bar"></div>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <p class="section-label">Contact Us</p>
+    <h1>Let's Start a Conversation</h1>
+    <p>Whether you're evaluating a product, need support, or want to explore a partnership — our team is ready to help.</p>
+  </div>
+
+  <!-- Contact Content -->
+  <section>
+    <div class="contact-grid">
+      <div class="contact-info slide-in">
+        <h2>Reach Our Team</h2>
+        <p>We respond to all inquiries within one business day. For enterprise demos and custom pricing, reach out directly and we'll set up a dedicated call.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text">
+            <span>Email</span>
+            <p>hello@logicsoftware.io</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <span>Phone</span>
+            <p>+1 (800) 555-0190</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <span>Business Hours</span>
+            <p>Monday–Friday, 8 AM–6 PM CST</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <span>Headquarters</span>
+            <p>Austin, Texas, USA</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form" class="slide-in">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" placeholder="Jordan" required />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Lewis" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Acme Corp" />
+        </div>
+        <div class="form-group">
+          <label for="product">Product Interest</label>
+          <select id="product" name="product">
+            <option value="">— Select a product —</option>
+            <option value="recycle">$ Recycle — Financial Sustainability</option>
+            <option value="asklewis">AskLewis — AI Knowledge Management</option>
+            <option value="medcert">MedCert — Medical Certification</option>
+            <option value="general">General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what you're looking for…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="18" fill="#1A2B34"/>
+          <text x="8" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">{</text>
+          <text x="36" y="72" font-family="monospace" font-size="52" font-weight="900" fill="#26A69A">L</text>
+          <text x="62" y="72" font-family="monospace" font-size="52" font-weight="900" fill="white">}</text>
+        </svg>
+        <p>Enterprise SaaS solutions engineered for finance, compliance, and intelligent knowledge management.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="products/recycle.html">$ Recycle</a>
+        <a href="products/asklewis.html">AskLewis</a>
+        <a href="products/medcert.html">MedCert</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Logic Software. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
