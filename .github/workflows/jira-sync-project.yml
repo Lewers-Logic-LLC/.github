@@ -1,119 +1,173 @@
-name: Jira Sync — Project Status Change
+name: Jira Sync — Project Status Poll
 
 on:
-  projects_v2_item:
-    types: [edited]
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   sync:
-    # Only fire when the Status field changes
-    if: |
-      github.event.changes.field_value.field_name == 'Status' &&
-      github.event.projects_v2_item.content_type == 'Issue'
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
     steps:
-      - name: Get linked issue body via GraphQL
-        id: get_issue
+      - name: Poll project and sync status to Jira
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ITEM_NODE_ID: ${{ github.event.projects_v2_item.content_node_id }}
-        run: |
-          QUERY=$(cat <<'EOF'
-          query($nodeId: ID!) {
-            node(id: $nodeId) {
-              ... on Issue {
-                body
-                title
-                number
-              }
-            }
-          }
-          EOF
-          )
-
-          RESPONSE=$(gh api graphql \
-            -f query="$QUERY" \
-            -f nodeId="$ITEM_NODE_ID")
-
-          BODY=$(echo "$RESPONSE" | jq -r '.data.node.body // ""')
-          JIRA_KEY=$(echo "$BODY" | grep -oP '(?<=<!-- jira-key: )[A-Z]+-[0-9]+(?= -->)' || true)
-
-          if [ -z "$JIRA_KEY" ]; then
-            echo "No Jira key found in issue body — skipping."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "jira_key=$JIRA_KEY" >> "$GITHUB_OUTPUT"
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Map GitHub column → Jira status
-        if: steps.get_issue.outputs.skip == 'false'
-        id: map_status
-        env:
-          GITHUB_COLUMN: ${{ github.event.changes.field_value.to.name }}
-        run: |
-          case "$GITHUB_COLUMN" in
-            "Backlog")                JIRA_STATUS="Backlog" ;;
-            "Ready for Dev")          JIRA_STATUS="Selected for Development" ;;
-            "In Progress")            JIRA_STATUS="In Progress" ;;
-            "Ready for Dev Review")   JIRA_STATUS="Pending Dev Review" ;;
-            "Dev Review In Progress") JIRA_STATUS="Dev Review" ;;
-            "Ready QA")               JIRA_STATUS="Ready QA" ;;
-            "UAT")                    JIRA_STATUS="UAT" ;;
-            "Ready for Deployment")   JIRA_STATUS="Ready for Deployment" ;;
-            "Completed")              JIRA_STATUS="Completed" ;;
-            "Blocked")                JIRA_STATUS="Blocked" ;;
-            "Canceled")               JIRA_STATUS="Canceled" ;;
-            *)
-              echo "No Jira mapping for GitHub column '$GITHUB_COLUMN' — skipping."
-              echo "jira_status=" >> "$GITHUB_OUTPUT"
-              exit 0
-              ;;
-          esac
-          echo "jira_status=$JIRA_STATUS" >> "$GITHUB_OUTPUT"
-          echo "GitHub column '$GITHUB_COLUMN' → Jira status '$JIRA_STATUS'"
-
-      - name: Transition Jira issue
-        if: |
-          steps.get_issue.outputs.skip == 'false' &&
-          steps.map_status.outputs.jira_status != ''
-        env:
+          GH_TOKEN: ${{ secrets.GH_PROJECT_PAT }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          JIRA_KEY: ${{ steps.get_issue.outputs.jira_key }}
-          TARGET_STATUS: ${{ steps.map_status.outputs.jira_status }}
         run: |
-          TRANSITIONS=$(curl -s \
-            -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
-            -H "Accept: application/json" \
-            "$JIRA_BASE_URL/rest/api/3/issue/$JIRA_KEY/transitions")
+          PROJECT_ID="PVT_kwDOEDQyes4BYnMb"
 
-          TRANSITION_ID=$(echo "$TRANSITIONS" | \
-            jq -r --arg name "$TARGET_STATUS" \
-            '.transitions[] | select(.to.name == $name) | .id')
+          # ---------------------------------------------------------------------------
+          # Fetch project items (100 max — enough for RINFRA)
+          # ---------------------------------------------------------------------------
+          ITEMS=$(gh api graphql \
+            -f query='
+              query($projectId: ID!) {
+                node(id: $projectId) {
+                  ... on ProjectV2 {
+                    items(first: 100) {
+                      nodes {
+                        updatedAt
+                        content {
+                          ... on Issue {
+                            body
+                          }
+                        }
+                        fieldValues(first: 20) {
+                          nodes {
+                            ... on ProjectV2ItemFieldSingleSelectValue {
+                              name
+                              field {
+                                ... on ProjectV2SingleSelectField {
+                                  name
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }' \
+            -f projectId="$PROJECT_ID" | \
+            jq '.data.node.items.nodes')
 
-          if [ -z "$TRANSITION_ID" ]; then
-            echo "No transition to '$TARGET_STATUS' available for $JIRA_KEY — skipping."
-            echo "Available: $(echo "$TRANSITIONS" | jq -r '[.transitions[].to.name] | join(", ")')"
+          CUTOFF_EPOCH=$(date -u -d '70 minutes ago' +%s)
+
+          # ---------------------------------------------------------------------------
+          # Filter to recently updated items with a jira-key comment and a status
+          # ---------------------------------------------------------------------------
+          RECENT=$(echo "$ITEMS" | jq -c --argjson cutoff "$CUTOFF_EPOCH" '
+            [.[] |
+              select(
+                (.updatedAt | fromdateiso8601) > $cutoff and
+                (.content.body // "" | test("<!-- jira-key: [A-Z]+-[0-9]+ -->"))
+              ) |
+              {
+                jira_key: (
+                  .content.body |
+                  capture("<!-- jira-key: (?P<key>[A-Z]+-[0-9]+) -->") |
+                  .key
+                ),
+                gh_status: (
+                  [.fieldValues.nodes[] |
+                    select(.field != null and .field.name == "Status") |
+                    .name
+                  ] | first // ""
+                )
+              } |
+              select(.gh_status != "")
+            ]')
+
+          COUNT=$(echo "$RECENT" | jq 'length')
+          echo "Found $COUNT recently updated item(s) to check"
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "Nothing to sync."
             exit 0
           fi
 
-          echo "Transitioning $JIRA_KEY → $TARGET_STATUS (id: $TRANSITION_ID)"
+          # ---------------------------------------------------------------------------
+          # Transition helper
+          # ---------------------------------------------------------------------------
+          transition_jira() {
+            local jira_key="$1"
+            local target_status="$2"
 
-          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
-            -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
-            -X POST \
-            -H "Content-Type: application/json" \
-            "$JIRA_BASE_URL/rest/api/3/issue/$JIRA_KEY/transitions" \
-            -d "{\"transition\": {\"id\": \"$TRANSITION_ID\"}}")
+            TRANSITIONS=$(curl -s \
+              -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
+              -H "Accept: application/json" \
+              "$JIRA_BASE_URL/rest/api/3/issue/$jira_key/transitions")
 
-          if [ "$RESPONSE" != "204" ]; then
-            echo "Jira transition failed with HTTP $RESPONSE"
-            exit 1
-          fi
+            TRANSITION_ID=$(echo "$TRANSITIONS" | \
+              jq -r --arg name "$target_status" \
+              '.transitions[] | select(.to.name == $name) | .id')
 
-          echo "Successfully transitioned $JIRA_KEY to $TARGET_STATUS"
+            if [ -z "$TRANSITION_ID" ]; then
+              echo "  No transition to '$target_status' available for $jira_key — skipping."
+              echo "  Available: $(echo "$TRANSITIONS" | jq -r '[.transitions[].to.name] | join(", ")')"
+              return
+            fi
+
+            HTTP=$(curl -s -o /dev/null -w "%{http_code}" \
+              -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
+              -X POST \
+              -H "Content-Type: application/json" \
+              "$JIRA_BASE_URL/rest/api/3/issue/$jira_key/transitions" \
+              -d "{\"transition\": {\"id\": \"$TRANSITION_ID\"}}")
+
+            if [ "$HTTP" = "204" ]; then
+              echo "  ✅ $jira_key → $target_status"
+            else
+              echo "  ❌ Transition failed (HTTP $HTTP)"
+            fi
+          }
+
+          # ---------------------------------------------------------------------------
+          # Process each item
+          # Use process substitution to keep function in scope (avoids subshell via pipe)
+          # ---------------------------------------------------------------------------
+          while read -r ITEM; do
+            JIRA_KEY=$(echo "$ITEM" | jq -r '.jira_key')
+            GH_STATUS=$(echo "$ITEM" | jq -r '.gh_status')
+
+            # Map GitHub column → Jira status
+            case "$GH_STATUS" in
+              "Backlog")                JIRA_STATUS="Backlog" ;;
+              "Ready for Dev")          JIRA_STATUS="Selected for Development" ;;
+              "In Progress")            JIRA_STATUS="In Progress" ;;
+              "Ready for Dev Review")   JIRA_STATUS="Pending Dev Review" ;;
+              "Dev Review In Progress") JIRA_STATUS="Dev Review" ;;
+              "Ready QA")               JIRA_STATUS="Ready QA" ;;
+              "UAT")                    JIRA_STATUS="UAT" ;;
+              "Ready for Deployment")   JIRA_STATUS="Ready for Deployment" ;;
+              "Completed")              JIRA_STATUS="Completed" ;;
+              "Blocked")                JIRA_STATUS="Blocked" ;;
+              "Canceled")               JIRA_STATUS="Canceled" ;;
+              *)
+                echo "No mapping for '$GH_STATUS' — skipping $JIRA_KEY"
+                continue
+                ;;
+            esac
+
+            # Get current Jira status
+            CURRENT_JIRA=$(curl -s \
+              -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
+              -H "Accept: application/json" \
+              "$JIRA_BASE_URL/rest/api/3/issue/$JIRA_KEY?fields=status" | \
+              jq -r '.fields.status.name')
+
+            if [ "$CURRENT_JIRA" = "$JIRA_STATUS" ]; then
+              echo "$JIRA_KEY already in sync ($JIRA_STATUS) — skipping."
+              continue
+            fi
+
+            echo "$JIRA_KEY: GitHub='$GH_STATUS', Jira='$CURRENT_JIRA' → transitioning to '$JIRA_STATUS'"
+            transition_jira "$JIRA_KEY" "$JIRA_STATUS"
+
+          done < <(echo "$RECENT" | jq -c '.[]')
