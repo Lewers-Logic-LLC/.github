@@ -2,7 +2,7 @@ name: Jira Sync — Project Status Poll
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -57,7 +57,7 @@ jobs:
             -f projectId="$PROJECT_ID" | \
             jq '.data.node.items.nodes')
 
-          CUTOFF_EPOCH=$(date -u -d '10 minutes ago' +%s)
+          CUTOFF_EPOCH=$(date -u -d '70 minutes ago' +%s)
 
           # ---------------------------------------------------------------------------
           # Filter to recently updated items with a jira-key comment and a status
