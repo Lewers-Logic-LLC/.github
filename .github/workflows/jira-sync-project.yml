@@ -15,8 +15,8 @@ jobs:
       - name: Poll project and sync status to Jira
         env:
           GH_TOKEN: ${{ secrets.GH_PROJECT_PAT }}
-          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_BASE_URL: ${{ vars.JIRA_BASE_URL }}
+          JIRA_EMAIL: ${{ vars.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
           PROJECT_ID="PVT_kwDOEDQyes4BYnMb"
