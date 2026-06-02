@@ -104,9 +104,14 @@ jobs:
               -H "Accept: application/json" \
               "$JIRA_BASE_URL/rest/api/3/issue/$jira_key/transitions")
 
+            if echo "$TRANSITIONS" | jq -e '.errorMessages' > /dev/null 2>&1; then
+              echo "  Jira API error for $jira_key: $(echo "$TRANSITIONS" | jq -r '.errorMessages[]') — skipping."
+              return
+            fi
+
             TRANSITION_ID=$(echo "$TRANSITIONS" | \
               jq -r --arg name "$target_status" \
-              '.transitions[] | select(.to.name == $name) | .id')
+              '.transitions[] | select(.to.name == $name) | .id' || true)
 
             if [ -z "$TRANSITION_ID" ]; then
               echo "  No transition to '$target_status' available for $jira_key — skipping."
