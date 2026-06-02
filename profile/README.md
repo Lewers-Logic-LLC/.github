@@ -3,8 +3,8 @@
 # LEWERS LOGIC LLC
 **High-Stakes Logic for High-Pressure Industries.**
 
-![Website: Coming Soon](https://img.shields.io/badge/Website-Coming_Soon-081634?style=for-the-badge&logo=googlechrome&logoColor=C4962C)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lewers_Logic-081634?style=for-the-badge&logo=linkedin&logoColor=C4962C)](#)
+[![Website](https://img.shields.io/badge/Website-lewerslogic.com-081634?style=for-the-badge&logo=googlechrome&logoColor=C4962C)](https://www.lewerslogic.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lewers_Logic-081634?style=for-the-badge&logo=linkedin&logoColor=C4962C)](https://www.linkedin.com/company/lewers-logic)
 
 <br>
 </div>
@@ -28,7 +28,7 @@ Lewers Logic LLC is dedicated to dismantling inefficiency through intelligent so
 * **Architecture:** `Model Context Protocol (MCP)`, `Python`, `Agentic LLM Workflows`.
 * **Focus:** Strict data grounding, automated brief enrichment, and surgical legal precision.
 * 🚧 **Status:** *In Active Development*
-* 🔗 **Access:** *Ask-Lewis Portal Coming Soon*
+* 🔗 **Access:** *LogicHub Portal Coming Soon*
 
 ---
 
@@ -49,3 +49,4 @@ We do not build generic "AI wrappers." We engineer precise, structural, and unsh
     "Architecture over decoration."
   ]
 }
+```
